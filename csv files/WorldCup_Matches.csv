@@ -1,0 +1,981 @@
+Year,Stage,Host-Country,Home Team Name,Home Team Goals,Away Team Goals,Away Team Name,Win conditions,MatchID
+1930,Group 1,Uruguay,France,4,1,Mexico,,1096
+1930,Group 4,Uruguay,USA,3,0,Belgium,,1090
+1930,Group 2,Uruguay,Yugoslavia,2,1,Brazil,,1093
+1930,Group 3,Uruguay,Romania,3,1,Peru,,1098
+1930,Group 1,Uruguay,Argentina,1,0,France,,1085
+1930,Group 1,Uruguay,Chile,3,0,Mexico,,1095
+1930,Group 2,Uruguay,Yugoslavia,4,0,Bolivia,,1092
+1930,Group 4,Uruguay,USA,3,0,Paraguay,,1097
+1930,Group 3,Uruguay,Uruguay,1,0,Peru,,1099
+1930,Group 1,Uruguay,Chile,1,0,France,,1094
+1930,Group 1,Uruguay,Argentina,6,3,Mexico,,1086
+1930,Group 2,Uruguay,Brazil,4,0,Bolivia,,1091
+1930,Group 4,Uruguay,Paraguay,1,0,Belgium,,1089
+1930,Group 3,Uruguay,Uruguay,4,0,Romania,,1100
+1930,Group 1,Uruguay,Argentina,3,1,Chile,,1084
+1930,Semi-finals,Uruguay,Argentina,6,1,USA,,1088
+1930,Semi-finals,Uruguay,Uruguay,6,1,Yugoslavia,,1101
+1930,Final,Uruguay,Uruguay,4,2,Argentina,,1087
+1934,Preliminary round,Italy,Austria,3,2,France,Austria win after extra time,1104
+1934,Preliminary round,Italy,Hungary,4,2,Egypt,,1119
+1934,Preliminary round,Italy,Switzerland,3,2,Netherlands,,1133
+1934,Preliminary round,Italy,Sweden,3,2,Argentina,,1102
+1934,Preliminary round,Italy,Germany,5,2,Belgium,,1108
+1934,Preliminary round,Italy,Spain,3,1,Brazil,,1111
+1934,Preliminary round,Italy,Italy,7,1,USA,,1135
+1934,Preliminary round,Italy,Czechoslovakia,2,1,Romania,,1141
+1934,Quarter-finals,Italy,Czechoslovakia,3,2,Switzerland,,1143
+1934,Quarter-finals,Italy,Germany,2,1,Sweden,,1129
+1934,Quarter-finals,Italy,Italy,1,1,Spain,,1122
+1934,Quarter-finals,Italy,Austria,2,1,Hungary,,1106
+1934,Quarter-finals,Italy,Italy,1,0,Spain,,1123
+1934,Semi-finals,Italy,Italy,1,0,Austria,,1107
+1934,Semi-finals,Italy,Czechoslovakia,3,1,Germany,,1130
+1934,Match for third place,Italy,Germany,3,2,Austria,,1105
+1934,Final,Italy,Italy,2,1,Czechoslovakia,Italy win after extra time,1134
+1938,First round,France,Switzerland,1,1,Germany,,1165
+1938,First round,France,Hungary,6,0,Dutch East Indies,,1173
+1938,First round,France,France,3,1,Belgium,,1146
+1938,First round,France,Cuba,3,3,Romania,,1156
+1938,First round,France,Italy,2,1,Norway,Italy win after extra time,1179
+1938,First round,France,Brazil,6,5,Poland,Brazil win after extra time,1150
+1938,First round,France,Czechoslovakia,3,0,Netherlands,Czechoslovakia win after extra time,1172
+1938,First round,France,Cuba,2,1,Romania,,1157
+1938,First round,France,Switzerland,4,2,Germany,,1166
+1938,Quarter-finals,France,Brazil,1,1,Czechoslovakia,,1152
+1938,Quarter-finals,France,Hungary,2,0,Switzerland,,1175
+1938,Quarter-finals,France,Sweden,8,0,Cuba,,1158
+1938,Quarter-finals,France,Italy,3,1,France,,1164
+1938,Quarter-finals,France,Brazil,2,1,Czechoslovakia,,1153
+1938,Semi-finals,France,Hungary,5,1,Sweden,,1176
+1938,Semi-finals,France,Italy,2,1,Brazil,,1149
+1938,Match for third place,France,Brazil,4,2,Sweden,,1151
+1938,Final,France,Italy,4,2,Hungary,,1174
+1950,Group 1,Brazil,Brazil,4,0,Mexico,,1187
+1950,Group 2,Brazil,England,2,0,Chile,,1192
+1950,Group 2,Brazil,Spain,3,1,USA,,1208
+1950,Group 3,Brazil,Sweden,3,2,Italy,,1219
+1950,Group 1,Brazil,Yugoslavia,3,0,Switzerland,,1230
+1950,Group 1,Brazil,Brazil,2,2,Switzerland,,1188
+1950,Group 1,Brazil,Yugoslavia,4,1,Mexico,,1225
+1950,Group 2,Brazil,Spain,2,0,Chile,,1193
+1950,Group 3,Brazil,Sweden,2,2,Paraguay,,1228
+1950,Group 2,Brazil,USA,1,0,England,,1202
+1950,Group 1,Brazil,Brazil,2,0,Yugoslavia,,1191
+1950,Group 2,Brazil,Spain,1,0,England,,1199
+1950,Group 3,Brazil,Italy,2,0,Paraguay,,1218
+1950,Group 4,Brazil,Uruguay,8,0,Bolivia,,1185
+1950,Group 1,Brazil,Switzerland,2,1,Mexico,,1222
+1950,Group 2,Brazil,Chile,5,2,USA,,1194
+1950,Group 6,Brazil,Uruguay,2,2,Spain,,1207
+1950,Group 6,Brazil,Brazil,7,1,Sweden,,1189
+1950,Group 6,Brazil,Brazil,6,1,Spain,,1186
+1950,Group 6,Brazil,Uruguay,3,2,Sweden,,1231
+1950,Group 6,Brazil,Sweden,3,1,Spain,,1206
+1950,Group 6,Brazil,Uruguay,2,1,Brazil,,1190
+1954,Group 3,Switzerland,Uruguay,2,0,Czechoslovakia,,1315
+1954,Group 3,Switzerland,Austria,1,0,Scotland,,1236
+1954,Group 1,Switzerland,Brazil,5,0,Mexico,,1249
+1954,Group 1,Switzerland,Yugoslavia,1,0,France,,1276
+1954,Group 2,Switzerland,Germany FR,4,1,Turkey,,1283
+1954,Group 2,Switzerland,Hungary,9,0,Korea Republic,,1294
+1954,Group 4,Switzerland,England,4,4,Belgium,,1240
+1954,Group 4,Switzerland,Switzerland,2,1,Italy,,1300
+1954,Group 3,Switzerland,Uruguay,7,0,Scotland,,1313
+1954,Group 3,Switzerland,Austria,5,0,Czechoslovakia,,1238
+1954,Group 1,Switzerland,France,3,2,Mexico,,1275
+1954,Group 1,Switzerland,Brazil,1,1,Yugoslavia,,1252
+1954,Group 2,Switzerland,Hungary,8,3,Germany FR,,1277
+1954,Group 2,Switzerland,Turkey,7,0,Korea Republic,,1304
+1954,Group 4,Switzerland,England,2,0,Switzerland,,1263
+1954,Group 4,Switzerland,Italy,4,1,Belgium,,1243
+1954,Group 2,Switzerland,Germany FR,7,2,Turkey,,1284
+1954,Group 4,Switzerland,Switzerland,4,1,Italy,,1301
+1954,Quarter-finals,Switzerland,Uruguay,4,2,England,,1264
+1954,Quarter-finals,Switzerland,Austria,7,5,Switzerland,,1237
+1954,Quarter-finals,Switzerland,Germany FR,2,0,Yugoslavia,,1285
+1954,Quarter-finals,Switzerland,Hungary,4,2,Brazil,,1248
+1954,Semi-finals,Switzerland,Germany FR,6,1,Austria,,1233
+1954,Semi-finals,Switzerland,Hungary,4,2,Uruguay,Hungary win after extra time,1295
+1954,Match for third place,Switzerland,Austria,3,1,Uruguay,,1239
+1954,Final,Switzerland,Germany FR,3,2,Hungary,,1278
+1958,Group 3,Sweden,Sweden,3,0,Mexico,,1415
+1958,Group 4,Sweden,Soviet Union,2,2,England,,1372
+1958,Group 1,Sweden,Argentina,1,3,Germany FR,,1323
+1958,Group 3,Sweden,Hungary,1,1,Wales,,1407
+1958,Group 2,Sweden,France,7,3,Paraguay,,1386
+1958,Group 2,Sweden,Yugoslavia,1,1,Scotland,,1434
+1958,Group 4,Sweden,Brazil,3,0,Austria,,1326
+1958,Group 1,Sweden,Northern Ireland,1,0,Czechoslovakia,,1421
+1958,Group 4,Sweden,Brazil,0,0,England,,1339
+1958,Group 3,Sweden,Mexico,1,1,Wales,,1418
+1958,Group 2,Sweden,Paraguay,3,2,Scotland,,1423
+1958,Group 2,Sweden,Yugoslavia,3,2,France,,1388
+1958,Group 4,Sweden,Soviet Union,2,0,Austria,,1332
+1958,Group 1,Sweden,Germany FR,2,2,Czechoslovakia,,1391
+1958,Group 1,Sweden,Argentina,3,1,Northern Ireland,,1324
+1958,Group 3,Sweden,Sweden,2,1,Hungary,,1406
+1958,Group 3,Sweden,Sweden,0,0,Wales,,1438
+1958,Group 4,Sweden,Brazil,2,0,Soviet Union,,1344
+1958,Group 1,Sweden,Germany FR,2,2,Northern Ireland,,1389
+1958,Group 3,Sweden,Hungary,4,0,Mexico,,1403
+1958,Group 2,Sweden,Paraguay,3,3,Yugoslavia,,1426
+1958,Group 2,Sweden,France,2,1,Scotland,,1387
+1958,Group 4,Sweden,England,2,2,Austria,,1327
+1958,Group 1,Sweden,Czechoslovakia,6,1,Argentina,,1325
+1958,Group 4,Sweden,Soviet Union,1,0,England,,1373
+1958,Group 1,Sweden,Northern Ireland,2,1,Czechoslovakia,Northern Ireland win after extra time,1422
+1958,Group 3,Sweden,Wales,2,1,Hungary,,1408
+1958,Quarter-finals,Sweden,Brazil,1,0,Wales,,1345
+1958,Quarter-finals,Sweden,Germany FR,1,0,Yugoslavia,,1392
+1958,Quarter-finals,Sweden,Sweden,2,0,Soviet Union,,1437
+1958,Quarter-finals,Sweden,France,4,0,Northern Ireland,,1385
+1958,Semi-finals,Sweden,Sweden,3,1,Germany FR,,1390
+1958,Semi-finals,Sweden,Brazil,5,2,France,,1340
+1958,Match for third place,Sweden,France,6,3,Germany FR,,1382
+1958,Final,Sweden,Brazil,5,2,Sweden,,1343
+1962,Group 1,Chile,Uruguay,2,1,Colombia,,1479
+1962,Group 3,Chile,Brazil,2,0,Mexico,,1461
+1962,Group 4,Chile,Argentina,1,0,Bulgaria,,1447
+1962,Group 2,Chile,Chile,3,1,Switzerland,,1473
+1962,Group 1,Chile,Soviet Union,2,0,Yugoslavia,,1563
+1962,Group 3,Chile,Czechoslovakia,1,0,Spain,,1498
+1962,Group 4,Chile,Hungary,2,1,England,,1490
+1962,Group 2,Chile,Germany FR,0,0,Italy,,1507
+1962,Group 1,Chile,Yugoslavia,3,1,Uruguay,,1564
+1962,Group 3,Chile,Brazil,0,0,Czechoslovakia,,1462
+1962,Group 4,Chile,England,3,1,Argentina,,1450
+1962,Group 2,Chile,Chile,2,0,Italy,,1472
+1962,Group 1,Chile,Soviet Union,4,4,Colombia,,1478
+1962,Group 3,Chile,Spain,1,0,Mexico,,1497
+1962,Group 4,Chile,Hungary,6,1,Bulgaria,,1470
+1962,Group 2,Chile,Germany FR,2,1,Switzerland,,1510
+1962,Group 1,Chile,Soviet Union,2,1,Uruguay,,1562
+1962,Group 3,Chile,Brazil,2,1,Spain,,1460
+1962,Group 4,Chile,Hungary,0,0,Argentina,,1451
+1962,Group 2,Chile,Germany FR,2,0,Chile,,1471
+1962,Group 1,Chile,Yugoslavia,5,0,Colombia,,1480
+1962,Group 3,Chile,Mexico,3,1,Czechoslovakia,,1544
+1962,Group 4,Chile,England,0,0,Bulgaria,,1464
+1962,Group 2,Chile,Italy,3,0,Switzerland,,1532
+1962,Quarter-finals,Chile,Chile,2,1,Soviet Union,,1474
+1962,Quarter-finals,Chile,Brazil,3,1,England,,1459
+1962,Quarter-finals,Chile,Czechoslovakia,1,0,Hungary,,1525
+1962,Quarter-finals,Chile,Yugoslavia,1,0,Germany FR,,1511
+1962,Semi-finals,Chile,Czechoslovakia,3,1,Yugoslavia,,1559
+1962,Semi-finals,Chile,Brazil,4,2,Chile,,1458
+1962,Match for third place,Chile,Chile,1,0,Yugoslavia,,1475
+1962,Final,Chile,Brazil,3,1,Czechoslovakia,,1463
+1966,Group 1,England,England,0,0,Uruguay,,1636
+1966,Group 2,England,Germany FR,5,0,Switzerland,,1656
+1966,Group 3,England,Brazil,2,0,Bulgaria,,1596
+1966,Group 4,England,Soviet Union,3,0,Korea DPR,,1710
+1966,Group 1,England,France,1,1,Mexico,,1650
+1966,Group 3,England,Portugal,3,1,Hungary,,1675
+1966,Group 2,England,Argentina,2,1,Spain,,1578
+1966,Group 4,England,Italy,2,0,Chile,,1608
+1966,Group 1,England,Uruguay,2,1,France,,1653
+1966,Group 2,England,Spain,2,1,Switzerland,,1641
+1966,Group 3,England,Hungary,3,1,Brazil,,1597
+1966,Group 4,England,Korea DPR,1,1,Chile,,1609
+1966,Group 3,England,Portugal,3,0,Bulgaria,,1602
+1966,Group 2,England,Germany FR,0,0,Argentina,,1579
+1966,Group 4,England,Soviet Union,1,0,Italy,,1682
+1966,Group 1,England,England,2,0,Mexico,,1634
+1966,Group 1,England,Uruguay,0,0,Mexico,,1689
+1966,Group 2,England,Argentina,2,0,Switzerland,,1582
+1966,Group 3,England,Portugal,3,1,Brazil,,1598
+1966,Group 4,England,Korea DPR,1,0,Italy,,1679
+1966,Group 1,England,England,2,0,France,,1632
+1966,Group 3,England,Hungary,3,1,Bulgaria,,1599
+1966,Group 2,England,Germany FR,2,1,Spain,,1637
+1966,Group 4,England,Soviet Union,2,1,Chile,,1610
+1966,Quarter-finals,England,England,1,0,Argentina,,1577
+1966,Quarter-finals,England,Germany FR,4,0,Uruguay,,1660
+1966,Quarter-finals,England,Soviet Union,2,1,Hungary,,1676
+1966,Quarter-finals,England,Portugal,5,3,Korea DPR,,1702
+1966,Semi-finals,England,Germany FR,2,1,Soviet Union,,1659
+1966,Semi-finals,England,England,2,1,Portugal,,1635
+1966,Match for third place,England,Portugal,2,1,Soviet Union,,1709
+1966,Final,England,England,4,2,Germany FR,England win after extra time,1633
+1970,Group 1,Mexico City,Mexico,0,0,Soviet Union,,1902
+1970,Group 2,Mexico City,Uruguay,2,0,Israel,,1881
+1970,Group 4,Mexico City,Peru,3,2,Bulgaria,,1780
+1970,Group 3,Mexico City,England,1,0,Romania,,1812
+1970,Group 2,Mexico City,Italy,1,0,Sweden,,1883
+1970,Group 4,Mexico City,Germany FR,2,1,Morocco,,1839
+1970,Group 3,Mexico City,Brazil,4,1,Czechoslovakia,,1770
+1970,Group 1,Mexico City,Belgium,3,0,El Salvador,,1747
+1970,Group 2,Mexico City,Uruguay,0,0,Italy,,1884
+1970,Group 4,Mexico City,Peru,3,0,Morocco,,1893
+1970,Group 3,Mexico City,Romania,2,1,Czechoslovakia,,1919
+1970,Group 1,Mexico City,Soviet Union,4,1,Belgium,,1753
+1970,Group 2,Mexico City,Sweden,1,1,Israel,,1880
+1970,Group 4,Mexico City,Germany FR,5,2,Bulgaria,,1774
+1970,Group 3,Mexico City,Brazil,1,0,England,,1764
+1970,Group 1,Mexico City,Mexico,4,0,El Salvador,,1820
+1970,Group 2,Mexico City,Sweden,1,0,Uruguay,,1922
+1970,Group 4,Mexico City,Germany FR,3,1,Peru,,1840
+1970,Group 3,Mexico City,Brazil,3,2,Romania,,1769
+1970,Group 1,Mexico City,Soviet Union,2,0,El Salvador,,1823
+1970,Group 2,Mexico City,Italy,0,0,Israel,,1877
+1970,Group 4,Mexico City,Bulgaria,1,1,Morocco,,1779
+1970,Group 3,Mexico City,England,1,0,Czechoslovakia,,1813
+1970,Group 1,Mexico City,Mexico,1,0,Belgium,,1752
+1970,Quarter-finals,Mexico City,Italy,4,1,Mexico,,1882
+1970,Quarter-finals,Mexico City,Germany FR,3,2,England,Germany FR win after extra time,1811
+1970,Quarter-finals,Mexico City,Brazil,4,2,Peru,,1768
+1970,Quarter-finals,Mexico City,Uruguay,1,0,Soviet Union,Uruguay win after extra time,1925
+1970,Semi-finals,Mexico City,Brazil,3,1,Uruguay,,1771
+1970,Semi-finals,Mexico City,Italy,4,3,Germany FR,Italy win after extra time,1838
+1970,Match for third place,Mexico City,Germany FR,1,0,Uruguay,,1843
+1970,Final,Mexico City,Brazil,4,1,Italy,,1765
+1974,Group 2,Germany,Brazil,0,0,Yugoslavia,,1986
+1974,Group 1,Germany,Germany FR,1,0,Chile,,2003
+1974,Group 1,Germany,German DR,2,0,Australia,,1955
+1974,Group 2,Germany,Zaire,0,2,Scotland,,2176
+1974,Group 3,Germany,Uruguay,0,2,Netherlands,,2098
+1974,Group 3,Germany,Sweden,0,0,Bulgaria,,1995
+1974,Group 4,Germany,Italy,3,1,Haiti,,2083
+1974,Group 4,Germany,Poland,3,2,Argentina,,1952
+1974,Group 1,Germany,Australia,0,3,Germany FR,,1954
+1974,Group 2,Germany,Scotland,0,0,Brazil,,1985
+1974,Group 1,Germany,Chile,1,1,German DR,,2004
+1974,Group 2,Germany,Yugoslavia,9,0,Zaire,,2186
+1974,Group 3,Germany,Netherlands,0,0,Sweden,,2097
+1974,Group 3,Germany,Bulgaria,1,1,Uruguay,,1996
+1974,Group 4,Germany,Haiti,0,7,Poland,,2085
+1974,Group 4,Germany,Argentina,1,1,Italy,,1949
+1974,Group 2,Germany,Scotland,1,1,Yugoslavia,,2175
+1974,Group 1,Germany,Australia,0,0,Chile,,1953
+1974,Group 2,Germany,Zaire,0,3,Brazil,,1987
+1974,Group 1,Germany,German DR,1,0,Germany FR,,2062
+1974,Group 3,Germany,Bulgaria,1,4,Netherlands,,1990
+1974,Group 4,Germany,Argentina,4,1,Haiti,,1947
+1974,Group 3,Germany,Sweden,3,0,Uruguay,,2181
+1974,Group 4,Germany,Poland,2,1,Italy,,2129
+1974,Group B,Germany,Yugoslavia,0,2,Germany FR,,2066
+1974,Group A,Germany,Brazil,1,0,German DR,,1982
+1974,Group A,Germany,Netherlands,4,0,Argentina,,1948
+1974,Group B,Germany,Sweden,0,1,Poland,,2167
+1974,Group A,Germany,Argentina,1,2,Brazil,,1945
+1974,Group B,Germany,Poland,2,1,Yugoslavia,,2170
+1974,Group A,Germany,German DR,0,2,Netherlands,,2067
+1974,Group B,Germany,Germany FR,4,2,Sweden,,2065
+1974,Group B,Germany,Poland,0,1,Germany FR,,2064
+1974,Group A,Germany,Netherlands,2,0,Brazil,,1983
+1974,Group A,Germany,Argentina,1,1,German DR,,1946
+1974,Group B,Germany,Sweden,2,1,Yugoslavia,,2182
+1974,Match for third place,Germany,Brazil,0,1,Poland,,1984
+1974,Final,Germany,Netherlands,1,2,Germany FR,,2063
+1978,Group 2,,Germany FR,0,0,Poland,,2351
+1978,Group 1,Argentina,Italy,2,1,France,,2347
+1978,Group 2,Argentina,Tunisia,3,1,Mexico,,2433
+1978,Group 1,Argentina,Argentina,2,1,Hungary,,2199
+1978,Group 3,Argentina,Sweden,1,1,Brazil,,2253
+1978,Group 3,Argentina,Austria,2,1,Spain,,2216
+1978,Group 4,Argentina,Peru,3,1,Scotland,,2451
+1978,Group 4,Argentina,Netherlands,3,0,IR Iran,,2388
+1978,Group 1,Argentina,Italy,3,1,Hungary,,2396
+1978,Group 2,Argentina,Poland,1,0,Tunisia,,2454
+1978,Group 2,Argentina,Germany FR,6,0,Mexico,,2350
+1978,Group 1,Argentina,Argentina,2,1,France,,2197
+1978,Group 3,Argentina,Brazil,0,0,Spain,,2246
+1978,Group 3,Argentina,Austria,1,0,Sweden,,2224
+1978,Group 4,Argentina,Scotland,1,1,IR Iran,,2408
+1978,Group 4,Argentina,Netherlands,0,0,Peru,,2394
+1978,Group 1,Argentina,France,3,1,Hungary,,2344
+1978,Group 2,Argentina,Poland,3,1,Mexico,,2431
+1978,Group 2,Argentina,Germany FR,0,0,Tunisia,,2352
+1978,Group 1,Argentina,Italy,1,0,Argentina,,2200
+1978,Group 3,Argentina,Brazil,1,0,Austria,,2215
+1978,Group 3,Argentina,Spain,1,0,Sweden,,2337
+1978,Group 4,Argentina,Peru,4,1,Iran,,2405
+1978,Group 4,Argentina,Scotland,3,2,Netherlands,,2395
+1978,Group A,Argentina,Germany FR,0,0,Italy,,2349
+1978,Group A,Argentina,Netherlands,5,1,Austria,,2220
+1978,Group B,Argentina,Brazil,3,0,Peru,,2251
+1978,Group B,Argentina,Argentina,2,0,Poland,,2202
+1978,Group B,Argentina,Poland,1,0,Peru,,2450
+1978,Group A,Argentina,Italy,1,0,Austria,,2221
+1978,Group A,Argentina,Germany FR,2,2,Netherlands,,2348
+1978,Group B,Argentina,Argentina,0,0,Brazil,,2196
+1978,Group A,Argentina,Netherlands,2,1,Italy,,2391
+1978,Group A,Argentina,Austria,3,2,Germany FR,,2217
+1978,Group B,Argentina,Brazil,3,1,Poland,,2252
+1978,Group B,Argentina,Argentina,6,0,Peru,,2201
+1978,Match for third place,Argentina,Brazil,2,1,Italy,,2247
+1978,Final,Argentina,Argentina,3,1,Netherlands,Argentina win after extra time,2198
+1982,Group 3,Argentina,Argentina,0,1,Belgium,,749
+1982,Group 1,Spain,Italy,0,0,Poland,,995
+1982,Group 6,Spain,Brazil,2,1,Soviet Union,,791
+1982,Group 1,Spain,Peru,0,0,Cameroon,,833
+1982,Group 3,Spain,Hungary,10,1,El Salvador,,896
+1982,Group 6,Spain,Scotland,5,2,New Zealand,,1051
+1982,Group 2,Spain,Germany FR,1,2,Algeria,,741
+1982,Group 4,Spain,England,3,1,France,,878
+1982,Group 5,Spain,Spain,1,1,Honduras,,901
+1982,Group 2,Spain,Chile,0,1,Austria,,764
+1982,Group 4,Spain,Czechoslovakia,1,1,Kuwait,,1012
+1982,Group 5,Spain,Yugoslavia,0,0,Northern Ireland,,1044
+1982,Group 1,Spain,Italy,1,1,Peru,,994
+1982,Group 3,Spain,Argentina,4,1,Hungary,,752
+1982,Group 6,Spain,Brazil,4,1,Scotland,,790
+1982,Group 1,Spain,Poland,0,0,Cameroon,,834
+1982,Group 3,Spain,Belgium,1,0,El Salvador,,774
+1982,Group 6,Spain,Soviet Union,3,0,New Zealand,,1054
+1982,Group 2,Spain,Germany FR,4,1,Chile,,813
+1982,Group 4,Spain,England,2,0,Czechoslovakia,,889
+1982,Group 5,Spain,Spain,2,1,Yugoslavia,,903
+1982,Group 2,Spain,Algeria,0,2,Austria,,739
+1982,Group 4,Spain,France,4,1,Kuwait,,919
+1982,Group 5,Spain,Honduras,1,1,Northern Ireland,,959
+1982,Group 1,Spain,Poland,5,1,Peru,,1055
+1982,Group 3,Spain,Belgium,1,1,Hungary,,779
+1982,Group 6,Spain,Soviet Union,2,2,Scotland,,1071
+1982,Group 1,Spain,Italy,1,1,Cameroon,,828
+1982,Group 3,Spain,Argentina,2,0,El Salvador,,751
+1982,Group 6,Spain,Brazil,4,0,New Zealand,,789
+1982,Group 2,Spain,Algeria,3,2,Chile,,740
+1982,Group 4,Spain,France,1,1,Czechoslovakia,,922
+1982,Group 5,Spain,Honduras,0,1,Yugoslavia,,962
+1982,Group 2,Spain,Germany FR,1,0,Austria,,770
+1982,Group 4,Spain,England,1,0,Kuwait,,882
+1982,Group 5,Spain,Northern Ireland,1,0,Spain,,902
+1982,Group 4,Spain,Austria,0,1,France,,767
+1982,Group 1,Spain,Poland,3,0,Belgium,,782
+1982,Group 3,Spain,Italy,2,1,Argentina,,753
+1982,Group 2,Spain,Germany FR,0,0,England,,879
+1982,Group 4,Spain,Austria,2,2,Northern Ireland,,771
+1982,Group 1,Spain,Belgium,0,1,Soviet Union,,783
+1982,Group 3,Spain,Argentina,1,3,Brazil,,750
+1982,Group 2,Spain,Germany FR,2,1,Spain,,900
+1982,Group 4,Spain,France,4,1,Northern Ireland,,920
+1982,Group 1,Spain,Poland,0,0,Soviet Union,,1058
+1982,Group 3,Spain,Italy,3,2,Brazil,,788
+1982,Group 2,Spain,Spain,0,0,England,,877
+1982,Semi-finals,Spain,Poland,0,2,Italy,,996
+1982,Semi-finals,Spain,Germany FR,3,3,France,win on penalties (5 - 4),914
+1982,Match for third place,Spain,Poland,3,2,France,,921
+1982,Final,Spain,Italy,3,1,Germany FR,,923
+1986,Group A,Mexico City,Bulgaria,1,1,Italy,,459
+1986,Group C,Mexico City,Canada,0,1,France,,468
+1986,Group D,Mexico City,Spain,0,1,Brazil,,439
+1986,Group C,Mexico City,Soviet Union,6,0,Hungary,,610
+1986,Group A,Mexico City,Argentina,3,1,Korea Republic,,395
+1986,Group F,Mexico City,Morocco,0,0,Poland,,674
+1986,Group D,Mexico City,Algeria,1,1,Northern Ireland,,379
+1986,Group B,Mexico City,Belgium,1,2,Mexico,,428
+1986,Group F,Mexico City,Portugal,1,0,England,,538
+1986,Group B,Mexico City,Paraguay,1,0,Iraq,,628
+1986,Group E,Mexico City,Scotland,0,1,Denmark,,517
+1986,Group E,Mexico City,Uruguay,1,1,Germany FR,,585
+1986,Group A,Mexico City,Italy,1,1,Argentina,,394
+1986,Group C,Mexico City,France,1,1,Soviet Union,,571
+1986,Group A,Mexico City,Korea Republic,1,1,Bulgaria,,460
+1986,Group C,Mexico City,Hungary,2,0,Canada,,475
+1986,Group D,Mexico City,Brazil,1,0,Algeria,,377
+1986,Group F,Mexico City,England,0,0,Morocco,,533
+1986,Group D,Mexico City,Northern Ireland,1,2,Spain,,551
+1986,Group B,Mexico City,Mexico,1,1,Paraguay,,680
+1986,Group F,Mexico City,Poland,1,0,Portugal,,701
+1986,Group B,Mexico City,Iraq,1,2,Belgium,,427
+1986,Group E,Mexico City,Denmark,6,1,Uruguay,,522
+1986,Group E,Mexico City,Germany FR,2,1,Scotland,,580
+1986,Group C,Mexico City,Hungary,0,3,France,,567
+1986,Group C,Mexico City,Soviet Union,2,0,Canada,,476
+1986,Group A,Mexico City,Korea Republic,2,3,Italy,,643
+1986,Group A,Mexico City,Argentina,2,0,Bulgaria,,389
+1986,Group B,Mexico City,Paraguay,2,2,Belgium,,429
+1986,Group B,Mexico City,Iraq,0,1,Mexico,,627
+1986,Group F,Mexico City,Portugal,1,3,Morocco,,675
+1986,Group F,Mexico City,England,3,0,Poland,,537
+1986,Group D,Mexico City,Northern Ireland,0,3,Brazil,,441
+1986,Group D,Mexico City,Algeria,0,3,Spain,,378
+1986,Group E,Mexico City,Scotland,0,0,Uruguay,,712
+1986,Group E,Mexico City,Denmark,2,0,Germany FR,,512
+1986,Round of 16,Mexico City,Soviet Union,3,4,Belgium,Belgium win after extra time,432
+1986,Round of 16,Mexico City,Mexico,2,0,Bulgaria,,463
+1986,Round of 16,Mexico City,Argentina,1,0,Uruguay,,398
+1986,Round of 16,Mexico City,Brazil,4,0,Poland,,444
+1986,Round of 16,Mexico City,Italy,0,2,France,,568
+1986,Round of 16,Mexico City,Morocco,0,1,Germany FR,,574
+1986,Round of 16,Mexico City,England,3,0,Paraguay,,536
+1986,Round of 16,Mexico City,Denmark,1,5,Spain,,511
+1986,Quarter-finals,Mexico City,Brazil,1,1,France,France win on penalties (3 - 4),440
+1986,Quarter-finals,Mexico City,Germany FR,0,0,Mexico,Germany FR win on penalties (4 - 1),575
+1986,Quarter-finals,Mexico City,Spain,1,1,Belgium,Belgium win on penalties (4 - 5),421
+1986,Quarter-finals,Mexico City,Argentina,2,1,England,,392
+1986,Semi-finals,Mexico City,France,0,2,Germany FR,,564
+1986,Semi-finals,Mexico City,Argentina,2,0,Belgium,,388
+1986,Match for third place,Mexico City,France,4,2,Belgium,France win after extra time,422
+1986,Final,Mexico City,Argentina,3,2,Germany FR,,393
+1990,Group B,Italy,Argentina,0,1,Cameroon,,26
+1990,Group B,Italy,Soviet Union,0,2,Romania,,342
+1990,Group D,Italy,"rn"">United Arab Emirates",0,2,Colombia,,119
+1990,Group A,Italy,Italy,1,0,Austria,,42
+1990,Group A,Italy,USA,1,5,Czechoslovakia,,355
+1990,Group C,Italy,Brazil,2,1,Sweden,,75
+1990,Group D,Italy,Germany FR,4,1,Yugoslavia,,201
+1990,Group C,Italy,Costa Rica,1,0,Scotland,,127
+1990,Group F,Italy,England,1,1,"rn"">Republic of Ireland",,161
+1990,Group E,Italy,Belgium,2,0,Korea Republic,,57
+1990,Group F,Italy,Netherlands,1,1,Egypt,,151
+1990,Group E,Italy,Uruguay,0,0,Spain,,180
+1990,Group B,Italy,Argentina,2,0,Soviet Union,,30
+1990,Group B,Italy,Cameroon,2,1,Romania,,108
+1990,Group D,Italy,Yugoslavia,1,0,Colombia,,120
+1990,Group A,Italy,Italy,1,0,USA,,265
+1990,Group A,Italy,Austria,0,1,Czechoslovakia,,43
+1990,Group D,Italy,Germany FR,5,1,"rn"">United Arab Emirates",,198
+1990,Group C,Italy,Brazil,1,0,Costa Rica,,73
+1990,Group C,Italy,Sweden,1,2,Scotland,,348
+1990,Group F,Italy,England,0,0,Netherlands,,160
+1990,Group F,Italy,"rn"">Republic of Ireland",0,0,Egypt,,152
+1990,Group E,Italy,Korea Republic,1,3,Spain,,175
+1990,Group E,Italy,Belgium,3,1,Uruguay,,66
+1990,Group B,Italy,Argentina,1,1,Romania,,29
+1990,Group B,Italy,Cameroon,0,4,Soviet Union,,111
+1990,Group D,Italy,Germany FR,1,1,Colombia,,114
+1990,Group D,Italy,Yugoslavia,4,1,"rn"">United Arab Emirates",,364
+1990,Group A,Italy,Italy,2,0,Czechoslovakia,,263
+1990,Group A,Italy,Austria,2,1,USA,,48
+1990,Group C,Italy,Brazil,1,0,Scotland,,74
+1990,Group C,Italy,Sweden,1,2,Costa Rica,,128
+1990,Group E,Italy,Korea Republic,0,1,Uruguay,,290
+1990,Group E,Italy,Belgium,1,2,Spain,,56
+1990,Group F,Italy,"rn"">Republic of Ireland",1,1,Netherlands,,228
+1990,Group F,Italy,England,1,0,Egypt,,150
+1990,Round of 16,Italy,Cameroon,2,1,Colombia,Cameroon win after extra time,102
+1990,Round of 16,Italy,Czechoslovakia,4,1,Costa Rica,,129
+1990,Round of 16,Italy,Brazil,0,1,Argentina,,25
+1990,Round of 16,Italy,Germany FR,2,1,Netherlands,,196
+1990,Round of 16,Italy,"rn"">Republic of Ireland",0,0,Romania,Republic of Ireland win on penalties (5 - 4),248
+1990,Round of 16,Italy,Italy,2,0,Uruguay,,264
+1990,Round of 16,Italy,Spain,1,2,Yugoslavia,Yugoslavia win after extra time,181
+1990,Round of 16,Italy,England,1,0,Belgium,England win after extra time,55
+1990,Quarter-finals,Italy,Yugoslavia,0,0,Argentina,win on penalties (2 - 3),31
+1990,Quarter-finals,Italy,Italy,1,0,"rn"">Republic of Ireland",,243
+1990,Quarter-finals,Italy,Germany FR,1,0,Czechoslovakia,,197
+1990,Quarter-finals,Italy,England,3,2,Cameroon,England win after extra time,103
+1990,Semi-finals,Italy,Italy,1,1,Argentina,win on penalties (3 - 4),28
+1990,Semi-finals,Italy,Germany FR,1,1,England,win on penalties (4 - 3),159
+1990,Match for third place,Italy,Italy,2,1,England,,162
+1990,Final,Italy,Germany FR,1,0,Argentina,,27
+1994,Group C,USA,Spain,2,2,Korea Republic,,3050
+1994,Group C,USA,Germany,1,0,Bolivia,,3049
+1994,Group A,USA,USA,1,1,Switzerland,,3051
+1994,Group E,USA,Italy,0,1,"rn"">Republic of Ireland",,3052
+1994,Group A,USA,Colombia,1,3,Romania,,3053
+1994,Group F,USA,Belgium,1,0,Morocco,,3054
+1994,Group E,USA,Norway,1,0,Mexico,,3055
+1994,Group B,USA,Cameroon,2,2,Sweden,,3056
+1994,Group F,USA,Netherlands,2,1,Saudi Arabia,,3058
+1994,Group B,USA,Brazil,2,0,Russia,,3057
+1994,Group D,USA,Argentina,4,0,Greece,,3059
+1994,Group D,USA,Nigeria,3,0,Bulgaria,,3061
+1994,Group C,USA,Germany,1,1,Spain,,3060
+1994,Group A,USA,Romania,1,4,Switzerland,,3062
+1994,Group A,USA,USA,2,1,Colombia,,3063
+1994,Group E,USA,Italy,1,0,Norway,,3064
+1994,Group C,USA,Korea Republic,0,0,Bolivia,,3065
+1994,Group E,USA,Mexico,2,1,"rn"">Republic of Ireland",,3066
+1994,Group B,USA,Sweden,3,1,Russia,,3068
+1994,Group B,USA,Brazil,3,0,Cameroon,,3067
+1994,Group F,USA,Belgium,1,0,Netherlands,,3069
+1994,Group F,USA,Saudi Arabia,2,1,Morocco,,3070
+1994,Group D,USA,Argentina,2,1,Nigeria,,3071
+1994,Group D,USA,Bulgaria,4,0,Greece,,3072
+1994,Group A,USA,USA,0,1,Romania,,3073
+1994,Group A,USA,Switzerland,0,2,Colombia,,3074
+1994,Group C,USA,Germany,3,2,Korea Republic,,3076
+1994,Group C,USA,Bolivia,1,3,Spain,,3075
+1994,Group E,USA,"rn"">Republic of Ireland",0,0,Norway,,3077
+1994,Group B,USA,Brazil,1,1,Sweden,,3080
+1994,Group E,USA,Italy,1,1,Mexico,,3078
+1994,Group B,USA,Russia,6,1,Cameroon,,3079
+1994,Group F,USA,Morocco,1,2,Netherlands,,3081
+1994,Group F,USA,Belgium,0,1,Saudi Arabia,,3082
+1994,Group D,USA,Greece,0,2,Nigeria,,3083
+1994,Group D,USA,Argentina,0,2,Bulgaria,,3084
+1994,Round of 16,USA,Germany,3,2,Belgium,,3085
+1994,Round of 16,USA,Spain,3,0,Switzerland,,3086
+1994,Round of 16,USA,Saudi Arabia,1,3,Sweden,,3087
+1994,Round of 16,USA,Romania,3,2,Argentina,,3088
+1994,Round of 16,USA,Netherlands,2,0,"rn"">Republic of Ireland",,3089
+1994,Round of 16,USA,Brazil,1,0,USA,,3090
+1994,Round of 16,USA,Nigeria,1,2,Italy,Italy win after extra time,3091
+1994,Round of 16,USA,Mexico,1,1,Bulgaria,Bulgaria win on penalties (1 - 3),3092
+1994,Quarter-finals,USA,Italy,2,1,Spain,,3097
+1994,Quarter-finals,USA,Netherlands,2,3,Brazil,,3098
+1994,Quarter-finals,USA,Bulgaria,2,1,Germany,,3096
+1994,Quarter-finals,USA,Romania,2,2,Sweden,Sweden win on penalties (4 - 5),3095
+1994,Semi-finals,USA,Bulgaria,1,2,Italy,,3100
+1994,Semi-finals,USA,Sweden,0,1,Brazil,,3099
+1994,Match for third place,USA,Sweden,4,0,Bulgaria,,3103
+1994,Final,USA,Brazil,0,0,Italy,Brazil win on penalties (3 - 2),3104
+1998,Group A,France,Brazil,2,1,Scotland,,4000
+1998,Group A,France,Morocco,2,2,Norway,,8725
+1998,Group B,France,Italy,2,2,Chile,,8726
+1998,Group B,France,Cameroon,1,1,Austria,,8727
+1998,Group D,France,Paraguay,0,0,Bulgaria,,8728
+1998,Group C,France,Saudi Arabia,0,1,Denmark,,8729
+1998,Group C,France,France,3,0,South Africa,,8730
+1998,Group D,France,Spain,2,3,Nigeria,,8731
+1998,Group E,France,Korea Republic,1,3,Mexico,,8732
+1998,Group E,France,Netherlands,0,0,Belgium,,8733
+1998,Group H,France,Argentina,1,0,Japan,,8734
+1998,Group F,France,Yugoslavia,1,0,Iran,,8735
+1998,Group H,France,Jamaica,1,3,Croatia,,8736
+1998,Group G,France,England,2,0,Tunisia,,8740
+1998,Group G,France,Romania,1,0,Colombia,,8739
+1998,Group F,France,Germany,2,0,USA,,8738
+1998,Group A,France,Scotland,1,1,Norway,,8741
+1998,Group A,France,Brazil,3,0,Morocco,,8742
+1998,Group B,France,Chile,1,1,Austria,,8743
+1998,Group B,France,Italy,3,0,Cameroon,,8744
+1998,Group C,France,South Africa,1,1,Denmark,,8746
+1998,Group C,France,France,4,0,Saudi Arabia,,8745
+1998,Group D,France,Nigeria,1,0,Bulgaria,,8747
+1998,Group D,France,Spain,0,0,Paraguay,,8748
+1998,Group H,France,Japan,0,1,Croatia,,8751
+1998,Group E,France,Belgium,2,2,Mexico,,8750
+1998,Group E,France,Netherlands,5,0,Korea Republic,,8749
+1998,Group F,France,Germany,2,2,Yugoslavia,,8753
+1998,Group H,France,Argentina,5,0,Jamaica,,8752
+1998,Group F,France,USA,1,2,Iran,,8754
+1998,Group G,France,Colombia,1,0,Tunisia,,8755
+1998,Group G,France,Romania,2,1,England,,8756
+1998,Group B,France,Italy,2,1,Austria,,8757
+1998,Group B,France,Chile,1,1,Cameroon,,8760
+1998,Group A,France,Scotland,0,3,Morocco,,8758
+1998,Group A,France,Brazil,1,2,Norway,,8759
+1998,Group C,France,France,2,1,Denmark,,8762
+1998,Group C,France,South Africa,2,2,Saudi Arabia,,8764
+1998,Group D,France,Spain,6,1,Bulgaria,,8761
+1998,Group D,France,Nigeria,1,3,Paraguay,,8763
+1998,Group E,France,Belgium,1,1,Korea Republic,,8765
+1998,Group E,France,Netherlands,2,2,Mexico,,8766
+1998,Group F,France,Germany,2,0,Iran,,8767
+1998,Group F,France,USA,0,1,Yugoslavia,,8768
+1998,Group H,France,Japan,1,2,Jamaica,,8771
+1998,Group H,France,Argentina,1,0,Croatia,,8772
+1998,Group G,France,Romania,1,1,Tunisia,,8769
+1998,Group G,France,Colombia,0,2,England,,8770
+1998,Round of 16,France,Italy,1,0,Norway,,8774
+1998,Round of 16,France,Brazil,4,1,Chile,,8773
+1998,Round of 16,France,France,1,0,Paraguay,France win after extra time,8776
+1998,Round of 16,France,Nigeria,1,4,Denmark,,8775
+1998,Round of 16,France,Germany,2,1,Mexico,,8777
+1998,Round of 16,France,Netherlands,2,1,Yugoslavia,,8778
+1998,Round of 16,France,Romania,0,1,Croatia,,8780
+1998,Round of 16,France,Argentina,2,2,England,Argentina win on penalties (4 - 3),8779
+1998,Quarter-finals,France,Italy,0,0,France,France win on penalties (3 - 4),8781
+1998,Quarter-finals,France,Brazil,3,2,Denmark,,8782
+1998,Quarter-finals,France,Netherlands,2,1,Argentina,,8784
+1998,Quarter-finals,France,Germany,0,3,Croatia,,8783
+1998,Semi-finals,France,Brazil,1,1,Netherlands,Brazil win on penalties (4 - 2),8785
+1998,Semi-finals,France,France,2,1,Croatia,,8786
+1998,Match for third place,France,Netherlands,1,2,Croatia,,8787
+1998,Final,France,Brazil,0,3,France,,8788
+2002,Group A,South Korea/Japan,France,0,1,Senegal,,43950001
+2002,Group A,South Korea/Japan,Uruguay,1,2,Denmark,,43950003
+2002,Group E,South Korea/Japan,"rn"">Republic of Ireland",1,1,Cameroon,,43950002
+2002,Group E,South Korea/Japan,Germany,8,0,Saudi Arabia,,43950004
+2002,Group F,South Korea/Japan,Argentina,1,0,Nigeria,,43950007
+2002,Group B,South Korea/Japan,Paraguay,2,2,South Africa,,43950006
+2002,Group F,South Korea/Japan,England,1,1,Sweden,,43950005
+2002,Group B,South Korea/Japan,Spain,3,1,Slovenia,,43950008
+2002,Group C,South Korea/Japan,Brazil,2,1,Turkey,,43950010
+2002,Group G,South Korea/Japan,Italy,2,0,Ecuador,,43950011
+2002,Group G,South Korea/Japan,Croatia,0,1,Mexico,,43950009
+2002,Group C,South Korea/Japan,China PR,0,2,Costa Rica,,43950012
+2002,Group H,South Korea/Japan,Japan,2,2,Belgium,,43950013
+2002,Group D,South Korea/Japan,Korea Republic,2,0,Poland,,43950014
+2002,Group H,South Korea/Japan,Russia,2,0,Tunisia,,43950015
+2002,Group D,South Korea/Japan,USA,3,2,Portugal,,43950016
+2002,Group E,South Korea/Japan,Germany,1,1,"rn"">Republic of Ireland",,43950017
+2002,Group A,South Korea/Japan,Denmark,1,1,Senegal,,43950020
+2002,Group E,South Korea/Japan,Cameroon,1,0,Saudi Arabia,,43950019
+2002,Group A,South Korea/Japan,France,0,0,Uruguay,,43950018
+2002,Group F,South Korea/Japan,Sweden,2,1,Nigeria,,43950021
+2002,Group F,South Korea/Japan,Argentina,0,1,England,,43950023
+2002,Group B,South Korea/Japan,Spain,3,1,Paraguay,,43950022
+2002,Group B,South Korea/Japan,South Africa,1,0,Slovenia,,43950024
+2002,Group C,South Korea/Japan,Brazil,4,0,China PR,,43950026
+2002,Group G,South Korea/Japan,Italy,1,2,Croatia,,43950025
+2002,Group C,South Korea/Japan,Costa Rica,1,1,Turkey,,43950028
+2002,Group H,South Korea/Japan,Japan,1,0,Russia,,43950029
+2002,Group G,South Korea/Japan,Mexico,2,1,Ecuador,,43950027
+2002,Group D,South Korea/Japan,Korea Republic,1,1,USA,,43950030
+2002,Group D,South Korea/Japan,Portugal,4,0,Poland,,43950032
+2002,Group H,South Korea/Japan,Tunisia,1,1,Belgium,,43950031
+2002,Group A,South Korea/Japan,Denmark,2,0,France,,43950033
+2002,Group A,South Korea/Japan,Senegal,3,3,Uruguay,,43950034
+2002,Group E,South Korea/Japan,Saudi Arabia,0,3,"rn"">Republic of Ireland",,43950036
+2002,Group E,South Korea/Japan,Cameroon,0,2,Germany,,43950035
+2002,Group F,South Korea/Japan,Sweden,1,1,Argentina,,43950037
+2002,Group F,South Korea/Japan,Nigeria,0,0,England,,43950038
+2002,Group B,South Korea/Japan,Slovenia,1,3,Paraguay,,43950040
+2002,Group B,South Korea/Japan,South Africa,2,3,Spain,,43950039
+2002,Group C,South Korea/Japan,Costa Rica,2,5,Brazil,,43950041
+2002,Group C,South Korea/Japan,Turkey,3,0,China PR,,43950042
+2002,Group G,South Korea/Japan,Ecuador,1,0,Croatia,,43950044
+2002,Group G,South Korea/Japan,Mexico,1,1,Italy,,43950043
+2002,Group H,South Korea/Japan,Tunisia,0,2,Japan,,43950045
+2002,Group D,South Korea/Japan,Portugal,0,1,Korea Republic,,43950047
+2002,Group D,South Korea/Japan,Poland,3,1,USA,,43950048
+2002,Group H,South Korea/Japan,Belgium,3,2,Russia,,43950046
+2002,Round of 16,South Korea/Japan,Denmark,0,3,England,,43950050
+2002,Round of 16,South Korea/Japan,Germany,1,0,Paraguay,,43950049
+2002,Round of 16,South Korea/Japan,Spain,1,1,"rn"">Republic of Ireland",Spain win on penalties (3 - 2),43950052
+2002,Round of 16,South Korea/Japan,Sweden,1,2,Senegal,Win on Golden Goal,43950051
+2002,Round of 16,South Korea/Japan,Brazil,2,0,Belgium,,43950054
+2002,Round of 16,South Korea/Japan,Mexico,0,2,USA,,43950053
+2002,Round of 16,South Korea/Japan,Japan,0,1,Turkey,,43950055
+2002,Round of 16,South Korea/Japan,Korea Republic,2,1,Italy,Win on Golden Goal,43950056
+2002,Quarter-finals,South Korea/Japan,England,1,2,Brazil,,43950057
+2002,Quarter-finals,South Korea/Japan,Germany,1,0,USA,,43950058
+2002,Quarter-finals,South Korea/Japan,Senegal,0,1,Turkey,Win on Golden Goal,43950060
+2002,Quarter-finals,South Korea/Japan,Spain,0,0,Korea Republic,Korea Republic win on penalties (3 - 5),43950059
+2002,Semi-finals,South Korea/Japan,Germany,1,0,Korea Republic,,43950061
+2002,Semi-finals,South Korea/Japan,Brazil,1,0,Turkey,,43950062
+2002,Third place,South Korea/Japan,Korea Republic,2,3,Turkey,,43950063
+2002,Final,South Korea/Japan,Germany,0,2,Brazil,,43950064
+2006,Group A,Germany,Germany,4,2,Costa Rica,,97410001
+2006,Group A,Germany,Poland,0,2,Ecuador,,97410002
+2006,Group B,Germany,England,1,0,Paraguay,,97410003
+2006,Group B,Germany,"rn"">Trinidad and Tobago",0,0,Sweden,,97410004
+2006,Group C,Germany,Argentina,2,1,CÔøΩte d'Ivoire,,97410005
+2006,Group C,Germany,"rn"">Serbia and Montenegro",0,1,Netherlands,,97410006
+2006,Group D,Germany,Mexico,3,1,Iran,,97410007
+2006,Group D,Germany,Angola,0,1,Portugal,,97410008
+2006,Group F,Germany,Australia,3,1,Japan,,97410012
+2006,Group E,Germany,USA,0,3,Czech Republic,,97410010
+2006,Group E,Germany,Italy,2,0,Ghana,,97410009
+2006,Group G,Germany,Korea Republic,2,1,Togo,,97410014
+2006,Group G,Germany,France,0,0,Switzerland,,97410013
+2006,Group F,Germany,Brazil,1,0,Croatia,,97410011
+2006,Group H,Germany,Spain,4,0,Ukraine,,97410015
+2006,Group H,Germany,Tunisia,2,2,Saudi Arabia,,97410016
+2006,Group A,Germany,Germany,1,0,Poland,,97410017
+2006,Group A,Germany,Ecuador,3,0,Costa Rica,,97410018
+2006,Group B,Germany,England,2,0,"rn"">Trinidad and Tobago",,97410019
+2006,Group B,Germany,Sweden,1,0,Paraguay,,97410020
+2006,Group C,Germany,Argentina,6,0,"rn"">Serbia and Montenegro",,97410021
+2006,Group C,Germany,Netherlands,2,1,CÔøΩte d'Ivoire,,97410022
+2006,Group D,Germany,Mexico,0,0,Angola,,97410023
+2006,Group D,Germany,Portugal,2,0,IR Iran,,97410024
+2006,Group E,Germany,Czech Republic,0,2,Ghana,,97410026
+2006,Group E,Germany,Italy,1,1,USA,,97410025
+2006,Group F,Germany,Japan,0,0,Croatia,,97410028
+2006,Group F,Germany,Brazil,2,0,Australia,,97410027
+2006,Group G,Germany,France,1,1,Korea Republic,,97410029
+2006,Group G,Germany,Togo,0,2,Switzerland,,97410030
+2006,Group H,Germany,Saudi Arabia,0,4,Ukraine,,97410032
+2006,Group H,Germany,Spain,3,1,Tunisia,,97410031
+2006,Group A,Germany,Ecuador,0,3,Germany,,97410033
+2006,Group A,Germany,Costa Rica,1,2,Poland,,97410034
+2006,Group B,Germany,Sweden,2,2,England,,97410035
+2006,Group B,Germany,Paraguay,2,0,"rn"">Trinidad and Tobago",,97410036
+2006,Group D,Germany,Iran,1,1,Angola,,97410040
+2006,Group D,Germany,Portugal,2,1,Mexico,,97410039
+2006,Group C,Germany,Netherlands,0,0,Argentina,,97410037
+2006,Group C,Germany,CÔøΩte d'Ivoire,3,2,"rn"">Serbia and Montenegro",,97410038
+2006,Group E,Germany,Czech Republic,0,2,Italy,,97410041
+2006,Group E,Germany,Ghana,2,1,USA,,97410042
+2006,Group F,Germany,Japan,1,4,Brazil,,97410043
+2006,Group F,Germany,Croatia,2,2,Australia,,97410044
+2006,Group H,Germany,Ukraine,1,0,Tunisia,,97410048
+2006,Group H,Germany,Saudi Arabia,0,1,Spain,,97410047
+2006,Group G,Germany,Togo,0,2,France,,97410045
+2006,Group G,Germany,Switzerland,2,0,Korea Republic,,97410046
+2006,Round of 16,Germany,Germany,2,0,Sweden,,97410049
+2006,Round of 16,Germany,Argentina,2,1,Mexico,Argentina win after extra time,97410050
+2006,Round of 16,Germany,England,1,0,Ecuador,,97410051
+2006,Round of 16,Germany,Portugal,1,0,Netherlands,,97410052
+2006,Round of 16,Germany,Italy,1,0,Australia,,97410053
+2006,Round of 16,Germany,Switzerland,0,0,Ukraine,Ukraine win on penalties (0 - 3),97410054
+2006,Round of 16,Germany,Brazil,3,0,Ghana,,97410055
+2006,Round of 16,Germany,Spain,1,3,France,,97410056
+2006,Quarter-finals,Germany,Germany,1,1,Argentina,Germany win on penalties (4 - 2),97410057
+2006,Quarter-finals,Germany,Italy,3,0,Ukraine,,97410058
+2006,Quarter-finals,Germany,England,0,0,Portugal,Portugal win on penalties (1 - 3),97410059
+2006,Quarter-finals,Germany,Brazil,0,1,France,,97410060
+2006,Semi-finals,Germany,Germany,0,2,Italy,Italy win after extra time,97410061
+2006,Semi-finals,Germany,Portugal,0,1,France,,97410062
+2006,Third place,Germany,Germany,3,1,Portugal,,97410063
+2006,Final,Germany,Italy,1,1,France,Italy win on penalties (5 - 3),97410064
+2010,Group A,South Africa,South Africa,1,1,Mexico,,300061454
+2010,Group A,South Africa,Uruguay,0,0,France,,300061453
+2010,Group B,South Africa,Korea Republic,2,0,Greece,,300061459
+2010,Group B,South Africa,Argentina,1,0,Nigeria,,300061460
+2010,Group C,South Africa,England,1,1,USA,,300061466
+2010,Group C,South Africa,Algeria,0,1,Slovenia,,300061465
+2010,Group D,South Africa,Serbia,0,1,Ghana,,300061471
+2010,Group D,South Africa,Germany,4,0,Australia,,300111116
+2010,Group E,South Africa,Netherlands,2,0,Denmark,,300061478
+2010,Group E,South Africa,Japan,1,0,Cameroon,,300061477
+2010,Group F,South Africa,Italy,1,1,Paraguay,,300061484
+2010,Group F,South Africa,New Zealand,1,1,Slovakia,,300061483
+2010,Group G,South Africa,CÔøΩte d'Ivoire,0,0,Portugal,,300061489
+2010,Group G,South Africa,Brazil,2,1,Korea DPR,,300061490
+2010,Group H,South Africa,Honduras,0,1,Chile,,300061495
+2010,Group H,South Africa,Spain,0,1,Switzerland,,300111112
+2010,Group A,South Africa,South Africa,0,3,Uruguay,,300061452
+2010,Group B,South Africa,Argentina,4,1,Korea Republic,,300061458
+2010,Group B,South Africa,Greece,2,1,Nigeria,,300061457
+2010,Group A,South Africa,France,0,2,Mexico,,300061451
+2010,Group D,South Africa,Germany,0,1,Serbia,,300061470
+2010,Group C,South Africa,Slovenia,2,2,USA,,300061463
+2010,Group C,South Africa,England,0,0,Algeria,,300061464
+2010,Group E,South Africa,Netherlands,1,0,Japan,,300111117
+2010,Group D,South Africa,Ghana,1,1,Australia,,300061469
+2010,Group E,South Africa,Cameroon,1,2,Denmark,,300061475
+2010,Group F,South Africa,Slovakia,0,2,Paraguay,,300061481
+2010,Group F,South Africa,Italy,1,1,New Zealand,,300061482
+2010,Group G,South Africa,Brazil,3,1,CÔøΩte d'Ivoire,,300061488
+2010,Group G,South Africa,Portugal,7,0,Korea DPR,,300061487
+2010,Group H,South Africa,Chile,1,0,Switzerland,,300061493
+2010,Group H,South Africa,Spain,2,0,Honduras,,300061494
+2010,Group A,South Africa,Mexico,0,1,Uruguay,,300061450
+2010,Group A,South Africa,France,1,2,South Africa,,300061449
+2010,Group B,South Africa,Nigeria,2,2,Korea Republic,,300111115
+2010,Group B,South Africa,Greece,0,2,Argentina,,300061455
+2010,Group C,South Africa,Slovenia,0,1,England,,300061462
+2010,Group C,South Africa,USA,1,0,Algeria,,300061461
+2010,Group D,South Africa,Ghana,0,1,Germany,,300061468
+2010,Group D,South Africa,Australia,2,1,Serbia,,300061467
+2010,Group F,South Africa,Slovakia,3,2,Italy,,300061480
+2010,Group F,South Africa,Paraguay,0,0,New Zealand,,300061479
+2010,Group E,South Africa,Denmark,1,3,Japan,,300061474
+2010,Group E,South Africa,Cameroon,1,2,Netherlands,,300061473
+2010,Group G,South Africa,Portugal,0,0,Brazil,,300111111
+2010,Group G,South Africa,Korea DPR,0,3,CÔøΩte d'Ivoire,,300061486
+2010,Group H,South Africa,Chile,1,2,Spain,,300061491
+2010,Group H,South Africa,Switzerland,0,0,Honduras,,300061492
+2010,Round of 16,South Africa,Uruguay,2,1,Korea Republic,,300061504
+2010,Round of 16,South Africa,USA,1,2,Ghana,Ghana win after extra time,300061503
+2010,Round of 16,South Africa,Germany,4,1,England,,300061501
+2010,Round of 16,South Africa,Argentina,3,1,Mexico,,300061502
+2010,Round of 16,South Africa,Netherlands,2,1,Slovakia,,300111113
+2010,Round of 16,South Africa,Brazil,3,0,Chile,,300061500
+2010,Round of 16,South Africa,Paraguay,0,0,Japan,Paraguay win on penalties (5 - 3),300061497
+2010,Round of 16,South Africa,Spain,1,0,Portugal,,300061498
+2010,Quarter-finals,South Africa,Netherlands,2,1,Brazil,,300061507
+2010,Quarter-finals,South Africa,Uruguay,1,1,Ghana,Uruguay win on penalties (4 - 2),300061508
+2010,Quarter-finals,South Africa,Argentina,0,4,Germany,,300061505
+2010,Quarter-finals,South Africa,Paraguay,0,1,Spain,,300061506
+2010,Semi-finals,South Africa,Uruguay,2,3,Netherlands,,300061512
+2010,Semi-finals,South Africa,Germany,0,1,Spain,,300111114
+2010,Match for third place,South Africa,Uruguay,2,3,Germany,,300061510
+2010,Final,South Africa,Netherlands,0,1,Spain,Spain win after extra time,300061509
+2014,Group A,Brazil,Brazil,3,1,Croatia,,300186456
+2014,Group A,Brazil,Mexico,1,0,Cameroon,,300186492
+2014,Group B,Brazil,Spain,1,5,Netherlands,,300186510
+2014,Group B,Brazil,Chile,3,1,Australia,,300186473
+2014,Group C,Brazil,Colombia,3,0,Greece,,300186471
+2014,Group D,Brazil,Uruguay,1,3,Costa Rica,,300186489
+2014,Group D,Brazil,England,1,2,Italy,,300186513
+2014,Group C,Brazil,CÔøΩte d'Ivoire,2,1,Japan,,300186507
+2014,Group E,Brazil,Switzerland,2,1,Ecuador,,300186494
+2014,Group E,Brazil,France,3,0,Honduras,,300186496
+2014,Group F,Brazil,Argentina,2,1,"rn"">Bosnia and Herzegovina",,300186477
+2014,Group G,Brazil,Germany,4,0,Portugal,,300186475
+2014,Group F,Brazil,IR Iran,0,0,Nigeria,,300186505
+2014,Group G,Brazil,Ghana,1,2,USA,,300186512
+2014,Group H,Brazil,Belgium,2,1,Algeria,,300186479
+2014,Group A,Brazil,Brazil,0,0,Mexico,,300186509
+2014,Group H,Brazil,Russia,1,1,Korea Republic,,300186499
+2014,Group B,Brazil,Australia,2,3,Netherlands,,300186478
+2014,Group B,Brazil,Spain,0,2,Chile,,300186498
+2014,Group A,Brazil,Cameroon,0,4,Croatia,,300186453
+2014,Group C,Brazil,Colombia,2,1,CÔøΩte d'Ivoire,,300186468
+2014,Group D,Brazil,Uruguay,2,1,England,,300186486
+2014,Group C,Brazil,Japan,0,0,Greece,,300186454
+2014,Group D,Brazil,Italy,0,1,Costa Rica,,300186500
+2014,Group E,Brazil,Switzerland,2,5,France,,300186514
+2014,Group E,Brazil,Honduras,1,2,Ecuador,,300186463
+2014,Group F,Brazil,Argentina,1,0,IR Iran,,300186466
+2014,Group G,Brazil,Germany,2,2,Ghana,,300186493
+2014,Group F,Brazil,Nigeria,1,0,"rn"">Bosnia and Herzegovina",,300186511
+2014,Group H,Brazil,Belgium,1,0,Russia,,300186481
+2014,Group H,Brazil,Korea Republic,2,4,Algeria,,300186495
+2014,Group G,Brazil,USA,2,2,Portugal,,300186483
+2014,Group B,Brazil,Australia,0,3,Spain,,300186467
+2014,Group B,Brazil,Netherlands,2,0,Chile,,300186470
+2014,Group A,Brazil,Cameroon,1,4,Brazil,,300186472
+2014,Group A,Brazil,Croatia,1,3,Mexico,,300186452
+2014,Group D,Brazil,Italy,0,1,Uruguay,,300186465
+2014,Group D,Brazil,Costa Rica,0,0,England,,300186484
+2014,Group C,Brazil,Japan,1,4,Colombia,,300186457
+2014,Group C,Brazil,Greece,2,1,CÔøΩte d'Ivoire,,300186455
+2014,Group F,Brazil,Nigeria,2,3,Argentina,,300186458
+2014,Group F,Brazil,"rn"">Bosnia and Herzegovina",3,1,IR Iran,,300186464
+2014,Group E,Brazil,Honduras,0,3,Switzerland,,300186482
+2014,Group E,Brazil,Ecuador,0,0,France,,300186515
+2014,Group G,Brazil,USA,0,1,Germany,,300186469
+2014,Group G,Brazil,Portugal,2,1,Ghana,,300186476
+2014,Group H,Brazil,Korea Republic,0,1,Belgium,,300186480
+2014,Group H,Brazil,Algeria,1,1,Russia,,300186506
+2014,Round of 16,Brazil,Brazil,1,1,Chile,Brazil win on penalties (3 - 2),300186487
+2014,Round of 16,Brazil,Colombia,2,0,Uruguay,,300186491
+2014,Round of 16,Brazil,France,2,0,Nigeria,,300186462
+2014,Round of 16,Brazil,Germany,2,1,Algeria,Germany win after extra time,300186460
+2014,Quarter-finals,Brazil,Brazil,2,1,Colombia,,300186461
+2014,Quarter-finals,Brazil,France,0,1,Germany,,300186485
+2014,Semi-finals,Brazil,Brazil,1,7,Germany,,300186474
+2014,Play-off for third place,Brazil,Brazil,0,3,Netherlands,,300186502
+2014,Final,Brazil,Germany,1,0,Argentina,Germany win after extra time,300186501
+2014,Semi-finals,Brazil,Netherlands,0,0,Argentina,Argentina win on penalties (2 - 4),300186490
+2014,Quarter-finals,Brazil,Netherlands,0,0,Costa Rica,Netherlands win on penalties (4 - 3),300186488
+2014,Quarter-finals,Brazil,Argentina,1,0,Belgium,,300186504
+2014,Round of 16,Brazil,Netherlands,2,1,Mexico,,300186508
+2014,Round of 16,Brazil,Costa Rica,1,1,Greece,Costa Rica win on penalties (5 - 3),300186459
+2014,Round of 16,Brazil,Argentina,1,0,Switzerland,Argentina win after extra time,300186503
+2014,Round of 16,Brazil,Belgium,2,1,USA,Belgium win after extra time,300186497
+2014,Round of 16,Brazil,Brazil,1,1,Chile,Brazil win on penalties (3 - 2),300186487
+2014,Round of 16,Brazil,Colombia,2,0,Uruguay,,300186491
+2014,Round of 16,Brazil,Netherlands,2,1,Mexico,,300186508
+2014,Round of 16,Brazil,Costa Rica,1,1,Greece,Costa Rica win on penalties (5 - 3),300186459
+2014,Round of 16,Brazil,France,2,0,Nigeria,,300186462
+2014,Round of 16,Brazil,Germany,2,1,Algeria,Germany win after extra time,300186460
+2014,Round of 16,Brazil,Argentina,1,0,Switzerland,Argentina win after extra time,300186503
+2014,Round of 16,Brazil,Belgium,2,1,USA,Belgium win after extra time,300186497
+2014,Quarter-finals,Brazil,France,0,1,Germany,,300186485
+2014,Quarter-finals,Brazil,Brazil,2,1,Colombia,,300186461
+2014,Quarter-finals,Brazil,Argentina,1,0,Belgium,,300186504
+2014,Quarter-finals,Brazil,Netherlands,0,0,Costa Rica,Netherlands win on penalties (4 - 3),300186488
+2014,Semi-finals,Brazil,Brazil,1,7,Germany,,300186474
+2014,Semi-finals,Brazil,Netherlands,0,0,Argentina,Argentina win on penalties (2 - 4),300186490
+2014,Play-off for third place,Brazil,Brazil,0,3,Netherlands,,300186502
+2014,Final,Brazil,Germany,1,0,Argentina,Germany win after extra time,300186501
+2022,Final,Qatar,Argentina,3,3,France,Argentina won on penalty kicks following extra time 4-2,
+2022,Third-place match,Qatar,Croatia,2,1,Morocco,,
+2022,Semi-finals,Qatar,France,2,0,Morocco,,
+2022,Semi-finals,Qatar,Argentina,3,0,Croatia,,
+2022,Quarter-finals,Qatar,Morocco,1,0,Portugal,,
+2022,Quarter-finals,Qatar,England,1,2,France,,
+2022,Quarter-finals,Qatar,Croatia,1,1,Brazil,Croatia won on penalty kicks following extra time 4-2,
+2022,Quarter-finals,Qatar,Netherlands,2,2,Argentina,Argentina won on penalty kicks following extra time,
+2022,Round of 16,Qatar,Morocco,0,0,Spain,"Morocco won on penalty kicks following extra time, 3-0",
+2022,Round of 16,Qatar,Portugal,6,1,Switzerland,,
+2022,Round of 16,Qatar,Japan,1,1,Croatia,"Croatia won on penalty kicks following extra time, 3-1",
+2022,Round of 16,Qatar,Brazil,4,1,Korea Republic,,
+2022,Round of 16,Qatar,France,3,1,Poland,,
+2022,Round of 16,Qatar,England,3,0,Senegal,,
+2022,Round of 16,Qatar,Netherlands,3,1,United States,,
+2022,Round of 16,Qatar,Argentina,2,1,Australia,,
+2022,Group stage,Qatar,Korea Republic,2,1,Portugal,,
+2022,Group stage,Qatar,Ghana,0,2,Uruguay,,
+2022,Group stage,Qatar,Cameroon,1,0,Brazil,,
+2022,Group stage,Qatar,Serbia,2,3,Switzerland,,
+2022,Group stage,Qatar,Canada,1,2,Morocco,,
+2022,Group stage,Qatar,Croatia,0,0,Belgium,,
+2022,Group stage,Qatar,Costa Rica,2,4,Germany,,
+2022,Group stage,Qatar,Japan,2,1,Spain,,
+2022,Group stage,Qatar,Australia,1,0,Denmark,,
+2022,Group stage,Qatar,Tunisia,1,0,France,,
+2022,Group stage,Qatar,Saudi Arabia,1,2,Mexico,,
+2022,Group stage,Qatar,Poland,0,2,Argentina,,
+2022,Group stage,Qatar,Ecuador,1,2,Senegal,,
+2022,Group stage,Qatar,Netherlands,2,0,Qatar,,
+2022,Group stage,Qatar,IR Iran,0,1,United States,,
+2022,Group stage,Qatar,Wales,0,3,England,,
+2022,Group stage,Qatar,Cameroon,3,3,Serbia,,
+2022,Group stage,Qatar,Korea Republic,2,3,Ghana,,
+2022,Group stage,Qatar,Brazil,1,0,Switzerland,,
+2022,Group stage,Qatar,Portugal,2,0,Uruguay,,
+2022,Group stage,Qatar,Japan,0,1,Costa Rica,,
+2022,Group stage,Qatar,Belgium,0,2,Morocco,,
+2022,Group stage,Qatar,Croatia,4,1,Canada,,
+2022,Group stage,Qatar,Spain,1,1,Germany,,
+2022,Group stage,Qatar,Tunisia,0,1,Australia,,
+2022,Group stage,Qatar,Poland,2,0,Saudi Arabia,,
+2022,Group stage,Qatar,France,2,1,Denmark,,
+2022,Group stage,Qatar,Argentina,2,0,Mexico,,
+2022,Group stage,Qatar,Wales,0,2,IR Iran,,
+2022,Group stage,Qatar,Qatar,1,3,Senegal,,
+2022,Group stage,Qatar,Netherlands,1,1,Ecuador,,
+2022,Group stage,Qatar,England,0,0,United States,,
+2022,Group stage,Qatar,Switzerland,1,0,Cameroon,,
+2022,Group stage,Qatar,Uruguay,0,0,Korea Republic,,
+2022,Group stage,Qatar,Portugal,3,2,Ghana,,
+2022,Group stage,Qatar,Brazil,2,0,Serbia,,
+2022,Group stage,Qatar,Morocco,0,0,Croatia,,
+2022,Group stage,Qatar,Germany,1,2,Japan,,
+2022,Group stage,Qatar,Spain,7,0,Costa Rica,,
+2022,Group stage,Qatar,Belgium,1,0,Canada,,
+2022,Group stage,Qatar,Argentina,1,2,Saudi Arabia,,
+2022,Group stage,Qatar,Denmark,0,0,Tunisia,,
+2022,Group stage,Qatar,Mexico,0,0,Poland,,
+2022,Group stage,Qatar,France,4,1,Australia,,
+2022,Group stage,Qatar,England,6,2,IR Iran,,
+2022,Group stage,Qatar,Senegal,0,2,Netherlands,,
+2022,Group stage,Qatar,United States,1,1,Wales,,
+2022,Group stage,Qatar,Qatar,0,2,Ecuador,,
+2018,Final,Russia,France,4,2,Croatia,,
+2018,Third-place match,Russia,Belgium,2,0,England,,
+2018,Semi-finals,Russia,Croatia,2,1,England,Required Extra Time,
+2018,Semi-finals,Russia,France,1,0,Belgium,,
+2018,Quarter-finals,Russia,Sweden,0,2,England,,
+2018,Quarter-finals,Russia,Russia,2,2,Croatia,"Croatia won on penalty kicks following extra time, 4-3",
+2018,Quarter-finals,Russia,Uruguay,0,2,France,,
+2018,Quarter-finals,Russia,Brazil,1,2,Belgium,,
+2018,Round of 16,Russia,Sweden,1,0,Switzerland,,
+2018,Round of 16,Russia,Colombia,1,1,England,"England won on penalty kicks following extra time, 4-3",
+2018,Round of 16,Russia,Brazil,2,0,Mexico,,
+2018,Round of 16,Russia,Belgium,3,2,Japan,,
+2018,Round of 16,Russia,Spain,1,1,Russia,"Russia won on penalty kicks following extra time, 4-3",
+2018,Round of 16,Russia,Croatia,1,1,Denmark,"Croatia won on penalty kicks following extra time, 3-2",
+2018,Round of 16,Russia,France,4,3,Argentina,,
+2018,Round of 16,Russia,Uruguay,2,1,Portugal,,
+2018,Group stage,Russia,Japan,0,1,Poland,,
+2018,Group stage,Russia,Senegal,0,1,Colombia,,
+2018,Group stage,Russia,England,0,1,Belgium,,
+2018,Group stage,Russia,Panama,1,2,Tunisia,,
+2018,Group stage,Russia,Korea Republic,2,0,Germany,,
+2018,Group stage,Russia,Mexico,0,3,Sweden,,
+2018,Group stage,Russia,Switzerland,2,2,Costa Rica,,
+2018,Group stage,Russia,Serbia,0,2,Brazil,,
+2018,Group stage,Russia,Australia,0,2,Peru,,
+2018,Group stage,Russia,Denmark,0,0,France,,
+2018,Group stage,Russia,Iceland,1,2,Croatia,,
+2018,Group stage,Russia,Nigeria,1,2,Argentina,,
+2018,Group stage,Russia,Saudi Arabia,2,1,Egypt,,
+2018,Group stage,Russia,Uruguay,3,0,Russia,,
+2018,Group stage,Russia,Spain,2,2,Morocco,,
+2018,Group stage,Russia,IR Iran,1,1,Portugal,,
+2018,Group stage,Russia,England,6,1,Panama,,
+2018,Group stage,Russia,Japan,2,2,Senegal,,
+2018,Group stage,Russia,Poland,0,3,Colombia,,
+2018,Group stage,Russia,Belgium,5,2,Tunisia,,
+2018,Group stage,Russia,Korea Republic,1,2,Mexico,,
+2018,Group stage,Russia,Germany,2,1,Sweden,,
+2018,Group stage,Russia,Brazil,2,0,Costa Rica,,
+2018,Group stage,Russia,Nigeria,2,0,Iceland,,
+2018,Group stage,Russia,Serbia,1,2,Switzerland,,
+2018,Group stage,Russia,Denmark,1,1,Australia,,
+2018,Group stage,Russia,France,1,0,Peru,,
+2018,Group stage,Russia,Argentina,0,3,Croatia,,
+2018,Group stage,Russia,Portugal,1,0,Morocco,,
+2018,Group stage,Russia,Uruguay,1,0,Saudi Arabia,,
+2018,Group stage,Russia,IR Iran,0,1,Spain,,
+2018,Group stage,Russia,Colombia,1,2,Japan,,
+2018,Group stage,Russia,Poland,1,2,Senegal,,
+2018,Group stage,Russia,Russia,3,1,Egypt,,
+2018,Group stage,Russia,Sweden,1,0,Korea Republic,,
+2018,Group stage,Russia,Belgium,3,0,Panama,,
+2018,Group stage,Russia,Tunisia,1,2,England,,
+2018,Group stage,Russia,Costa Rica,0,1,Serbia,,
+2018,Group stage,Russia,Germany,0,1,Mexico,,
+2018,Group stage,Russia,Brazil,1,1,Switzerland,,
+2018,Group stage,Russia,France,2,1,Australia,,
+2018,Group stage,Russia,Argentina,1,1,Iceland,,
+2018,Group stage,Russia,Peru,0,1,Denmark,,
+2018,Group stage,Russia,Croatia,2,0,Nigeria,,
+2018,Group stage,Russia,Egypt,0,1,Uruguay,,
+2018,Group stage,Russia,Morocco,0,1,IR Iran,,
+2018,Group stage,Russia,Portugal,3,3,Spain,,
+2018,Group stage,Russia,Russia,5,0,Saudi Arabia,,
