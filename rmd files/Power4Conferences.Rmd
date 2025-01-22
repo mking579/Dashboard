@@ -1,0 +1,50 @@
+```{r}
+Power4Conferences <- read_xlsx("/Users/marvinkingjr./Desktop/RStudioWork/Sports/College Sports/Data/Power4Conference_Rankings.xlsx")
+```
+
+```{r}
+Power4Conferences
+```
+
+```{r}
+library(dplyr)
+
+# Count the number of sports participated in by each school
+df_power4 <- Power4Conferences %>%
+  rowwise() %>%
+ mutate(SportsCount = sum(!is.na(c_across(ends_with("Points")))))
+
+# Create the PointsPerSport column
+df_power4 <- df_power4 %>%
+  mutate(PointsPerSport = Total / SportsCount)
+
+# Rank schools by PointsPerSport within each conference
+df_power4_ranked <- df_power4 %>%
+  group_by(Conference) %>%
+  arrange(desc(PointsPerSport)) %>%
+  ungroup()
+
+# View the ranked data
+print(df_power4_ranked)
+
+```
+
+```{r}
+# Split the ranked data into separate tables for each conference
+conference_tables <- df_power4_ranked %>%
+  group_split(Conference)
+
+# Save each conference table with its name
+names(conference_tables) <- unique(df_power4_ranked$Conference)
+
+# View tables for each conference (example)
+SEC_table <- conference_tables[["SEC"]]
+Big10_table <- conference_tables[["Big10"]]
+Big12_table <- conference_tables[["Big12"]]
+ACC_table <- conference_tables[["ACC"]]
+
+# Print an example table (e.g., SEC)
+print(SEC_table)
+
+```
+

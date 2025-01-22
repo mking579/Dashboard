@@ -1,0 +1,73 @@
+library(shiny)
+library(dplyr)
+library(ggplot2)
+
+# Load the CSV file
+data <- read.csv("/Users/marvinkingjr./RStudioWork/Shiny/Power4_Standings.csv")
+
+# Define UI
+ui <- fluidPage(
+  titlePanel("Power 4 Standings Dashboard"),
+  sidebarLayout(
+    sidebarPanel(
+      tabsetPanel(
+        tabPanel(
+          "School Filter",
+          selectInput("school", "Select School:", choices = unique(data$School)),
+          actionButton("filter_school", "Show Table")
+        ),
+        tabPanel(
+          "Conference Filter",
+          selectInput("conference", "Select Conference:", choices = unique(data$Conference)),
+          actionButton("filter_conference", "Show Chart")
+        )
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Filtered Table", tableOutput("school_table")),
+        tabPanel("Conference Chart", plotOutput("conference_plot"))
+      )
+    )
+  )
+)
+
+# Define Server
+server <- function(input, output, session) {
+  # Filter by School
+  observeEvent(input$filter_school, {
+    output$school_table <- renderTable({
+      req(input$school)
+      school_data <- data %>%
+        filter(School == input$school) %>%
+        select(School, Sport = names(data)[grep("Place$", names(data))]) %>%
+        pivot_longer(-School, names_to = "Sport", values_to = "Place") %>%
+        filter(!is.na(Place))
+      
+      school_data
+    })
+  })
+  
+  # Filter by Conference
+  observeEvent(input$filter_conference, {
+    output$conference_plot <- renderPlot({
+      req(input$conference)
+      conference_data <- data %>%
+        filter(Conference == input$conference)
+      
+      ggplot(conference_data, aes(y = reorder(School, desc(School)), x = Sport)) +
+        geom_point() +
+        labs(
+          title = paste("Schools in", input$conference, "Conference"),
+          x = "Sports",
+          y = "Schools"
+        ) +
+        theme_minimal()
+    })
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+

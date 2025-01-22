@@ -1,0 +1,840 @@
+```{r}
+library(rvest)
+library(dplyr)
+library(stringr)
+library(janitor)
+
+# List of schools and URLs
+schools <- list(
+  "DeSoto Central" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/376909-desoto-central-jaguars/games",
+  "Hernando" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/376912-hernando-tigers/games",
+  "Horn Lake" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/376916-horn-lake-eagles/games",
+  "Lewisburg" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/405825-lewisburg-patriots/games",
+  "Oxford" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/379602-oxford-chargers/games",
+  "Southaven" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/376922-southaven-chargers/games",
+  "Clinton" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/489696-clinton-arrows/games",
+  "Germantown" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/405806-germantown-mavericks/games",
+  "Madison Central" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/491460-madison-central-jaguars/games",
+  "Murrah" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/378169-murrah-mustangs/games",
+  "Starkville" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/380781-starkville-yellowjackets/games",
+  "Tupelo" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/380979-tupelo-golden-wave/games",
+  "Brandon" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/379972-brandon-bulldogs/games",
+  "Meridian" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/378992-meridian-wildcats/games",
+  "Northwest Rankin" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/405839-northwest-rankin-cougars/games",
+  "Oak Grove" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/378468-oak-grove-warriors/games",
+  "Pearl" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/379680-pearl-pirates/games",
+  "Petal" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/379727-petal-panthers/games",
+  "Biloxi" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/376014-biloxi-indians/games",
+  "D'Iberville" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/405793-diberville-warriors/games",
+  "Gulfport" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/377714-gulfport-admirals/games",
+  "Harrison Central" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/377831-harrison-central-red-rebels/games",
+  "Ocean Springs" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/379471-ocean-springs-greyhounds/games",
+  "St. Martin" = "https://www.si.com/high-school/stats/mississippi/girls-soccer/teams/378147-st-martin-yellowjackets/games"
+)
+
+# Team IDs for reference
+team_ids <- c(
+  "DeSoto Central" = 1.1, "Hernando" = 1.2, "Horn Lake" = 1.3, "Lewisburg" = 1.4,
+  "Oxford" = 1.5, "Southaven" = 1.6, "Clinton" = 2.1, "Germantown" = 2.2,
+  "Madison Central" = 2.3, "Murrah" = 2.4, "Starkville" = 2.5, "Tupelo" = 2.6,
+  "Brandon" = 3.1, "Meridian" = 3.2, "Northwest Rankin" = 3.3, "Oak Grove" = 3.4,
+  "Pearl" = 3.5, "Petal" = 3.6, "Biloxi" = 4.1, "D'Iberville" = 4.2, 
+  "Gulfport" = 4.3, "Harrison Central" = 4.4, "Ocean Springs" = 4.5, "St. Martin" = 4.6
+)
+
+# Function to scrape and clean the table
+scrape_and_clean_table <- function(url, team_name, team_id, output_dir) {
+  # Read the webpage
+  page <- read_html(url)
+  
+  # Extract the first table
+  raw_table <- page %>% 
+    html_element("table") %>% 
+    html_table(fill = TRUE)
+  
+  # Check if table exists
+  if (is.null(raw_table)) {
+    warning(paste("No table found for", team_name))
+    return(NULL)
+  }
+  
+  # Standardize column names
+  raw_table <- raw_table %>% clean_names()
+  
+  # Inspect column names for debugging
+  print(paste("Column names for", team_name, ":", toString(names(raw_table))))
+  
+  # Add Team and Team_ID
+  raw_table$team <- team_name
+  raw_table$team_id <- team_id
+  
+  # Remove unnecessary columns using square brackets
+  raw_table <- raw_table[, !names(raw_table) %in% c("date", "tickets", "live_stream")]
+  
+  # Check and rename w_l_league to overall_record
+  if ("w_l_league" %in% names(raw_table)) {
+    # Rename column
+    names(raw_table)[names(raw_table) == "w_l_league"] <- "overall_record"
+    
+    # Extract and clean region_record from overall_record
+    raw_table$region_record <- str_extract(raw_table$overall_record, "\\(.*?\\)")
+    raw_table$overall_record <- str_trim(str_remove(raw_table$overall_record, "\\(.*?\\)"))
+    raw_table$region_record <- str_remove_all(raw_table$region_record, "[()]")
+  } else {
+    raw_table$overall_record <- NA
+    raw_table$region_record <- NA
+    warning(paste("Column 'w_l_league' not found for", team_name))
+  }
+  
+  # Remove rows where result is empty or type is "Scrimmage"
+  raw_table <- raw_table[!is.na(raw_table$result) & raw_table$result != "" & raw_table$type != "Scrimmage", ]
+  
+  # Parse opponent column to extract game_location and opponent_name
+  raw_table$game_location <- str_extract(raw_table$opponent, "vs|@")
+  raw_table$opponent <- str_trim(str_remove(raw_table$opponent, "^(vs\\s|@\\s)"))
+  
+  # Add opponent_id column
+  raw_table$opponent_id <- NA
+  
+  # Save the cleaned data
+  output_file <- file.path(output_dir, paste0(gsub(" ", "_", team_name), ".csv"))
+  write.csv(raw_table, output_file, row.names = FALSE)
+  
+  return(raw_table)
+}
+
+# Output directory
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/Scrape_Project"
+
+# Scrape and clean data for all schools
+for (school in names(schools)) {
+  url <- schools[[school]]
+  team_id <- team_ids[school]
+  tryCatch({
+    print(paste("Scraping and processing:", school))
+    scrape_and_clean_table(url, school, team_id, output_dir)
+  }, error = function(e) {
+    print(paste("Error scraping:", school, "URL:", url))
+    print(e)
+  })
+}
+
+
+```
+
+```{r}
+library(plyr)
+library(readr)
+
+data_all <- list.files(path = "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/Scrape_Project",
+                       pattern = "*.csv", full.names = TRUE) %>%
+  lapply(read_csv) %>%
+  bind_rows()
+
+SevenA_team_data <- data_all %>%
+  mutate(result = as.character(result)) %>% # Ensure `result` remains as character
+  as.data.frame()
+
+```
+
+```{r}
+print(unique(data_all$result))
+
+```
+```{r}
+print(head(SevenA_team_data$result, 10))
+
+```
+
+
+```{r}
+# Step 1: Extract `team_score` and `opponent_score` from `result`
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(
+    team_score = as.numeric(str_extract(result, "(?<=W\\s|L\\s|T\\s)\\d+")), # Extract team score
+    opponent_score = as.numeric(str_extract(result, "(?<=-)\\d+")),         # Extract opponent score
+    result = str_extract(result, "^[WLT]")                                 # Keep only W, L, or T
+  )
+
+# Step 2: Rename "vs" to "home" and "@" to "away" in `game_location`
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(game_location = case_when(
+    game_location == "vs" ~ "home",
+    game_location == "@" ~ "away",
+    TRUE ~ game_location  # Keep existing values if not "vs" or "@"
+  ))
+
+# Step 3: Remove leading "vs" and "@" from `opponent`
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(opponent = str_trim(str_remove(opponent, "^(vs\\s*|@\\s*)")))
+
+# Step 4: Verify the final output
+print(head(SevenA_team_data))
+
+```
+
+
+
+```{r}
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(type = ifelse(type == "Tournament", "Non Region", type))
+```
+
+
+```{r}
+print(head(SevenA_team_data))
+```
+
+```{r}
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(opponent_id = ifelse(
+    opponent %in% team,                       # Check if opponent matches any value in team
+    team_id[match(opponent, team)],          # Assign corresponding team_id
+    5                                        # Assign 5 if no match
+  ))
+
+print(head(SevenA_team_data))
+```
+
+```{r}
+# Update "type" column based on team_id and opponent_id
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(
+    type = ifelse(
+      substr(as.character(team_id), 1, 1) == substr(as.character(opponent_id), 1, 1),
+      "Region",
+      "Non Region"
+    )
+  )
+
+# View a sample of the updated dataframe
+print(head(SevenA_team_data, 40))
+
+```
+
+```{r}
+# Create a new dataframe for cumulative region record
+Region_Record_Data <- SevenA_team_data
+
+# Add region_win, region_loss, and region_tie columns
+Region_Record_Data$region_win <- ifelse(Region_Record_Data$type == "Region" & Region_Record_Data$result == "W", 1, 0)
+Region_Record_Data$region_loss <- ifelse(Region_Record_Data$type == "Region" & Region_Record_Data$result == "L", 1, 0)
+Region_Record_Data$region_tie <- ifelse(Region_Record_Data$type == "Region" & Region_Record_Data$result == "T", 1, 0)
+
+# Initialize cumulative columns
+Region_Record_Data$cumulative_win <- 0
+Region_Record_Data$cumulative_loss <- 0
+Region_Record_Data$cumulative_tie <- 0
+
+# Calculate cumulative region stats for each team_id
+unique_teams <- unique(Region_Record_Data$team_id)
+for (team in unique_teams) {
+  team_rows <- Region_Record_Data$team_id == team
+  Region_Record_Data$cumulative_win[team_rows] <- cumsum(Region_Record_Data$region_win[team_rows])
+  Region_Record_Data$cumulative_loss[team_rows] <- cumsum(Region_Record_Data$region_loss[team_rows])
+  Region_Record_Data$cumulative_tie[team_rows] <- cumsum(Region_Record_Data$region_tie[team_rows])
+}
+
+# Create region_record column
+Region_Record_Data$region_record <- ifelse(
+  Region_Record_Data$type == "Region",
+  paste0(
+    Region_Record_Data$cumulative_win, "-", 
+    Region_Record_Data$cumulative_loss, "-", 
+    Region_Record_Data$cumulative_tie
+  ),
+  NA
+)
+
+# Select relevant columns for output
+Region_Record_Data <- Region_Record_Data[, c(
+  "team_id", "opponent", "type", "result", "region_record", 
+  "cumulative_win", "cumulative_loss", "cumulative_tie", 
+  "game_location", "opponent_id", "team_score", "opponent_score"
+)]
+
+# View the resulting dataframe
+head(Region_Record_Data, 40)
+
+```
+
+```{r}
+# Ensure the rows in both dataframes align correctly
+if (nrow(SevenA_team_data) == nrow(Region_Record_Data)) {
+  SevenA_team_data$region_record <- Region_Record_Data$region_record
+} else {
+  stop("The row counts of SevenA_team_data and Region_Record_Data do not match. Ensure they are aligned.")
+}
+
+# View the updated SevenA_team_data
+head(SevenA_team_data, 40)
+```
+```{r}
+# Remove rows where `result` is NA
+SevenA_team_data <- SevenA_team_data %>%
+  filter(!is.na(result) & result != "")
+
+# Confirm that rows with `NA` in `result` have been removed
+print(summary(SevenA_team_data$result))  # Check the summary of the `result` column
+print(table(is.na(SevenA_team_data$result)))  # Ensure there are no `NA` values
+
+```
+
+```{r}
+
+compute_region_standings <- function(data, region_number) {
+  data %>%
+    # Filter for the specified region
+    filter(substr(as.character(team_id), 1, 1) == region_number) %>%
+    
+    # Group by team
+    group_by(team) %>%
+    
+    # Summarize overall and region stats
+    dplyr::summarise(
+      overall_record = paste0("'", sum(result == "W"), "-", sum(result == "L"), "-", sum(result == "T")),
+      overall_win_perct = round(sum(result == "W") / n(), 3),
+      overall_points = sum(ifelse(result == "W", 3, ifelse(result == "T", 1, 0))),
+      overall_points_game = round(overall_points / n(), 3),
+      
+      # Goals calculations
+      Goals_Scored = sum(team_score, na.rm = TRUE),
+      Goals_Conceded = sum(opponent_score, na.rm = TRUE),
+      Avg._Goals_Scored = round(Goals_Scored / n(), 3),
+      Avg._Goals_Conceded = round(Goals_Conceded / n(), 3),
+      
+      # Region-specific stats
+      region_record = paste0("'", sum(type == "Region" & result == "W"), "-", 
+                             sum(type == "Region" & result == "L"), "-", 
+                             sum(type == "Region" & result == "T")),
+      region_win_perct = round(sum(type == "Region" & result == "W") / sum(type == "Region"), 3),
+      region_points = sum(ifelse(type == "Region" & result == "W", 3, 
+                                 ifelse(type == "Region" & result == "T", 1, 0))),
+      region_points_game = round(region_points / sum(type == "Region"), 3)
+    ) %>%
+    arrange(desc(region_points_game)) %>%
+    ungroup()
+}
+
+# Compute standings for each region
+Region_1_Standings <- compute_region_standings(SevenA_team_data, "1")
+Region_2_Standings <- compute_region_standings(SevenA_team_data, "2")
+Region_3_Standings <- compute_region_standings(SevenA_team_data, "3")
+Region_4_Standings <- compute_region_standings(SevenA_team_data, "4")
+
+# Directory to save the files
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+
+# Ensure the directory exists
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# Save standings for each region as CSV
+write.csv(Region_1_Standings, file.path(output_dir, "Region_1_Standings.csv"), row.names = FALSE)
+write.csv(Region_2_Standings, file.path(output_dir, "Region_2_Standings.csv"), row.names = FALSE)
+write.csv(Region_3_Standings, file.path(output_dir, "Region_3_Standings.csv"), row.names = FALSE)
+write.csv(Region_4_Standings, file.path(output_dir, "Region_4_Standings.csv"), row.names = FALSE)
+
+cat("Standings saved to:", output_dir, "\n")
+
+# View standings (optional)
+print("Region 1 Standings")
+print(Region_1_Standings)
+
+print("Region 2 Standings")
+print(Region_2_Standings)
+
+print("Region 3 Standings")
+print(Region_3_Standings)
+
+print("Region 4 Standings")
+print(Region_4_Standings)
+
+```
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+
+# Combine the Region standings
+Region_Standings <- bind_rows(
+  Region_1_Standings %>% mutate(Region = "Region 1"),
+  Region_2_Standings %>% mutate(Region = "Region 2"),
+  Region_3_Standings %>% mutate(Region = "Region 3"),
+  Region_4_Standings %>% mutate(Region = "Region 4")
+)
+
+# Add prefix to overall_record and region_record columns
+Region_Standings <- Region_Standings %>%
+  mutate(
+    overall_record = paste0("'", overall_record),
+    region_record = paste0("'", region_record)
+  )
+
+# Define the output directory and file name
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "Region_Standings.csv")
+
+# Ensure the directory exists
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# Save the combined Region_Standings as a CSV
+write.csv(Region_Standings, output_file, row.names = FALSE)
+
+cat("Region standings saved to:", output_file, "\n")
+
+# View a sample of the combined Region_Standings
+print(head(Region_Standings))
+
+```
+```{r}
+# Add single quote to 'overall_record' and 'region_record'
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(
+    overall_record = paste0("'", overall_record),
+    region_record = paste0("'", region_record)
+  )
+
+# Define the output directory and file name
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "SevenA_team_data.csv")
+
+# Ensure the directory exists
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# Save the updated SevenA_team_data as a CSV
+write.csv(SevenA_team_data, output_file, row.names = FALSE)
+
+cat("SevenA_team_data with updated records saved to:", output_file, "\n")
+
+
+```
+
+```{r}
+library(dplyr)
+
+# Add team_region and opponent_region columns to SevenA_team_data_two
+SevenA_team_data_two <- SevenA_team_data %>%
+  mutate(
+    team_region = substr(as.character(team_id), 1, 1),         # Extract team region
+    opponent_region = substr(as.character(opponent_id), 1, 1) # Extract opponent region
+  )
+
+# Verify the columns are added
+cat("Columns in SevenA_team_data_two:", names(SevenA_team_data_two), "\n")
+print(head(SevenA_team_data_two))
+```
+
+```{r}
+if ("package:plyr" %in% search()) {
+  detach("package:plyr", unload = TRUE)
+}
+
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+# Filter out Region 5
+region_records <- SevenA_team_data_two %>%
+  filter(team_region %in% c("1", "2", "3", "4") & opponent_region %in% c("1", "2", "3", "4")) %>%
+  dplyr::group_by(team_region, opponent_region) %>%
+  dplyr::summarise(
+    wins = sum(result == "W", na.rm = TRUE),
+    losses = sum(result == "L", na.rm = TRUE),
+    ties = sum(result == "T", na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  dplyr::mutate(record = paste0("'", wins, "-", losses, "-", ties, "'")) # Add single quotes
+
+# Reshape into a matrix format
+region_matrix <- region_records %>%
+  dplyr::select(team_region, opponent_region, record) %>%
+  pivot_wider(names_from = opponent_region, values_from = record) %>%
+  arrange(team_region) %>%
+  dplyr::rename(Region = team_region)
+
+# Replace diagonal values with blanks (instead of NA)
+for (i in seq_len(nrow(region_matrix))) {
+  region_matrix[i, i + 1] <- "" # Blank cell for diagonal
+}
+
+# Save the region matrix to CSV
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "Region_Matrix_Clean.csv")
+
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+write.csv(region_matrix, output_file, row.names = FALSE, quote = FALSE)
+cat("Clean Region matrix saved to:", output_file, "\n")
+
+# View the result
+print(region_matrix)
+```
+
+```{r}
+library(dplyr)
+
+# Filter SevenA_team_data for teams with team_id starting with 1, 2, 3, or 4
+filtered_data <- SevenA_team_data %>%
+  filter(substr(as.character(team_id), 1, 1) %in% c("1", "2", "3", "4"))
+
+# Function to calculate Elo Ratings
+calculate_elo <- function(data, k = 20, initial_elo = 1500) {
+  # Initialize Elo ratings
+  teams <- unique(c(data$team, data$opponent))
+  elo_ratings <- data.frame(
+    team = teams,
+    elo = rep(initial_elo, length(teams)),
+    stringsAsFactors = FALSE
+  )
+  
+  # Function to compute expected score
+  expected_score <- function(elo_A, elo_B) {
+    1 / (1 + 10^((elo_B - elo_A) / 400))
+  }
+  
+  # Iterate through each match
+  for (i in 1:nrow(data)) {
+    # Extract team and opponent
+    team <- data$team[i]
+    opponent <- data$opponent[i]
+    
+    # Retrieve current Elo ratings
+    elo_team <- elo_ratings$elo[elo_ratings$team == team]
+    elo_opponent <- elo_ratings$elo[elo_ratings$team == opponent]
+    
+    # Determine match outcome (1 = win, 0 = loss, 0.5 = draw)
+    result <- ifelse(data$result[i] == "W", 1,
+              ifelse(data$result[i] == "L", 0, 0.5))
+    
+    # Compute expected scores
+    exp_team <- expected_score(elo_team, elo_opponent)
+    exp_opponent <- 1 - exp_team
+    
+    # Update Elo ratings
+    elo_ratings$elo[elo_ratings$team == team] <- round(elo_team + k * (result - exp_team), 0)
+    elo_ratings$elo[elo_ratings$team == opponent] <- round(elo_opponent + k * ((1 - result) - exp_opponent), 0)
+  }
+  
+  return(elo_ratings)
+}
+
+# Calculate Elo ratings for the filtered data
+elo_rankings <- calculate_elo(filtered_data)
+
+# Sort by Elo and save
+elo_rankings <- elo_rankings %>%
+  arrange(desc(elo))
+
+# Output file path
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "Elo_Rankings_Filtered.csv")
+
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+write.csv(elo_rankings, output_file, row.names = FALSE)
+cat("Elo rankings saved to:", output_file, "\n")
+
+# View top 10
+print(head(elo_rankings, 10))
+
+```
+
+```{r}
+library(dplyr)
+
+# Filter data for all matches
+filtered_data <- SevenA_team_data %>%
+  filter(team_id %in% c(1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 
+                        2.1, 2.2, 2.3, 2.4, 2.5, 2.6,
+                        3.1, 3.2, 3.3, 3.4, 3.5, 3.6,
+                        4.1, 4.2, 4.3, 4.4, 4.5, 4.6) |
+           opponent_id %in% c(1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 
+                              2.1, 2.2, 2.3, 2.4, 2.5, 2.6,
+                              3.1, 3.2, 3.3, 3.4, 3.5, 3.6,
+                              4.1, 4.2, 4.3, 4.4, 4.5, 4.6))
+
+# Function to calculate Elo Ratings
+calculate_elo <- function(data, k = 20, initial_elo = 1500) {
+  # Initialize Elo ratings
+  teams <- unique(c(data$team, data$opponent))
+  elo_ratings <- data.frame(
+    team = teams,
+    elo = rep(initial_elo, length(teams)),
+    stringsAsFactors = FALSE
+  )
+  
+  # Function to compute expected score
+  expected_score <- function(elo_A, elo_B) {
+    1 / (1 + 10^((elo_B - elo_A) / 400))
+  }
+  
+  # Iterate through each match
+  for (i in 1:nrow(data)) {
+    # Extract team and opponent
+    team <- data$team[i]
+    opponent <- data$opponent[i]
+    
+    # Retrieve current Elo ratings
+    elo_team <- elo_ratings$elo[elo_ratings$team == team]
+    elo_opponent <- elo_ratings$elo[elo_ratings$team == opponent]
+    
+    # Determine match outcome (1 = win, 0 = loss, 0.5 = draw)
+    result <- ifelse(data$result[i] == "W", 1,
+              ifelse(data$result[i] == "L", 0, 0.5))
+    
+    # Compute expected scores
+    exp_team <- expected_score(elo_team, elo_opponent)
+    exp_opponent <- 1 - exp_team
+    
+    # Update Elo ratings
+    elo_ratings$elo[elo_ratings$team == team] <- round(elo_team + k * (result - exp_team), 0)
+    elo_ratings$elo[elo_ratings$team == opponent] <- round(elo_opponent + k * ((1 - result) - exp_opponent), 0)
+  }
+  
+  return(elo_ratings)
+}
+
+# Calculate Elo ratings for the filtered data
+elo_rankings <- calculate_elo(filtered_data)
+
+# Filter the final Elo output to only include team_id between 1.1 and 4.6
+valid_teams <- unique(filtered_data$team) # Extract valid teams
+elo_rankings <- elo_rankings %>%
+  filter(team %in% valid_teams) %>%
+  arrange(desc(elo))
+
+# Output file path
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "Elo_Rankings_Team_1.1_to_4.6.csv")
+
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+write.csv(elo_rankings, output_file, row.names = FALSE)
+cat("Elo rankings for teams 1.1 to 4.6 saved to:", output_file, "\n")
+
+# View top 10
+print(head(elo_rankings, 10))
+
+```
+```{r}
+library(dplyr)
+library(tidyr)
+
+# Function to calculate Poisson probabilities and normalize
+poisson_matrix <- function(lambda_home, lambda_away, max_goals = 6) {
+  home_goals <- 0:max_goals
+  away_goals <- 0:max_goals
+  
+  # Calculate Poisson probabilities for home and away goals
+  home_probs <- dpois(home_goals, lambda_home)
+  away_probs <- dpois(away_goals, lambda_away)
+  
+  # Create the probability matrix
+  prob_matrix <- outer(home_probs, away_probs)
+  
+  # Normalize the matrix to sum to 1
+  prob_matrix <- prob_matrix / sum(prob_matrix)
+  
+  # Convert to a dataframe for CSV output
+  matrix_df <- as.data.frame(prob_matrix)
+  colnames(matrix_df) <- paste0("Away_", 0:max_goals)
+  matrix_df <- cbind(Home = paste0("Home_", 0:max_goals), matrix_df)
+  
+  # Round values to 3 decimal places
+  matrix_df <- matrix_df %>%
+    mutate(across(where(is.numeric), ~sprintf("%.3f", .)))
+  
+  return(matrix_df)
+}
+
+# Use existing lambdas for Oxford at Southaven
+lambda_home <- 1.2  # Replace with calculated home lambda
+lambda_away <- 1.3  # Replace with calculated away lambda
+
+# Generate Poisson matrix
+poisson_output <- poisson_matrix(lambda_home, lambda_away, max_goals = 6)
+
+# Save the matrix to a CSV
+output_dir <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls"
+output_file <- file.path(output_dir, "Oxford_at_Southaven_Poisson_Matrix.csv")
+
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+write.csv(poisson_output, output_file, row.names = FALSE, quote = FALSE)
+cat("Normalized Poisson matrix saved to:", output_file, "\n")
+
+# View the first few rows of the matrix
+print(head(poisson_output))
+
+
+```
+
+```{r}
+library(dplyr)
+library(stringr)
+
+# Step 1: Initialize Elo ratings for all unique teams
+elo_ratings <- SevenA_team_data %>%
+  distinct(team, team_id) %>%
+  mutate(elo = 1500)  # Start everyone at 1500
+
+# Ensure team names are cleaned (trim whitespace)
+elo_ratings <- elo_ratings %>%
+  mutate(team = str_trim(team))
+
+SevenA_team_data <- SevenA_team_data %>%
+  mutate(
+    team = str_trim(team),
+    opponent = str_trim(opponent)
+  )
+
+# Step 2: Function to update Elo ratings
+update_elo <- function(elo_home, elo_away, score_home, score_away, k = 20) {
+  # Calculate expected results
+  expected_home <- 1 / (1 + 10^((elo_away - elo_home) / 400))
+  expected_away <- 1 - expected_home
+  
+  # Actual results
+  result_home <- ifelse(score_home > score_away, 1, ifelse(score_home == score_away, 0.5, 0))
+  result_away <- 1 - result_home
+  
+  # Update Elo
+  new_elo_home <- elo_home + k * (result_home - expected_home)
+  new_elo_away <- elo_away + k * (result_away - expected_away)
+  
+  return(list(home = new_elo_home, away = new_elo_away))
+}
+
+# Step 3: Process match results and update Elo dynamically
+for (i in 1:nrow(SevenA_team_data)) {
+  home_team <- SevenA_team_data$team[i]
+  away_team <- SevenA_team_data$opponent[i]
+  
+  home_score <- SevenA_team_data$team_score[i]
+  away_score <- SevenA_team_data$opponent_score[i]
+  
+  # Find indices of home and away teams in elo_ratings
+  home_index <- match(home_team, elo_ratings$team)
+  away_index <- match(away_team, elo_ratings$team)
+  
+  # Only update if both teams are found
+  if (!is.na(home_index) && !is.na(away_index)) {
+    # Get current ratings
+    elo_home <- elo_ratings$elo[home_index]
+    elo_away <- elo_ratings$elo[away_index]
+    
+    # Update Elo ratings
+    new_elos <- update_elo(elo_home, elo_away, home_score, away_score)
+    
+    # Save new Elo ratings back into the table
+    elo_ratings$elo[home_index] <- new_elos$home
+    elo_ratings$elo[away_index] <- new_elos$away
+  }
+}
+
+# Step 4: Filter for teams with team_id starting with 1, 2, 3, or 4 for final output
+filtered_elo_ratings <- elo_ratings %>%
+  filter(substr(as.character(team_id), 1, 1) %in% c("1", "2", "3", "4")) %>%
+  arrange(desc(elo))
+
+# Save to CSV
+output_file <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls/Elo_Rankings.csv"
+write.csv(filtered_elo_ratings, output_file, row.names = FALSE)
+cat("Filtered Elo ratings saved to:", output_file, "\n")
+
+# View final Elo ratings for teams in Regions 1-4
+print(filtered_elo_ratings)
+
+
+```
+```{r}
+library(dplyr)
+library(tidyr)
+
+# Set up variables for Oxford at Southaven
+home_team <- "Southaven"
+away_team <- "Oxford"
+
+# Fetch current Elo ratings
+home_elo <- elo_ratings %>% filter(team == home_team) %>% pull(elo)
+away_elo <- elo_ratings %>% filter(team == away_team) %>% pull(elo)
+
+# Adjust for home field disadvantage (0.973)
+home_adv <- 0.973
+lambda_home <- 1.35 * (10^((home_elo - away_elo) / 400)) * home_adv
+lambda_away <- 1.35 * (10^((away_elo - home_elo) / 400))
+
+# Print expected goals
+cat("Expected Goals (Lambda):\n")
+cat("Home Team:", round(lambda_home, 3), "\n")
+cat("Away Team:", round(lambda_away, 3), "\n")
+
+# Create Poisson distribution matrix
+max_goals <- 6
+poisson_matrix <- matrix(0, nrow = max_goals + 1, ncol = max_goals + 1)
+
+for (i in 0:max_goals) {
+  for (j in 0:max_goals) {
+    poisson_matrix[i + 1, j + 1] <- dpois(i, lambda_home) * dpois(j, lambda_away)
+  }
+}
+
+# Convert matrix to a dataframe
+poisson_df <- as.data.frame(poisson_matrix)
+colnames(poisson_df) <- paste0("Away_", 0:max_goals)
+rownames(poisson_df) <- paste0("Home_", 0:max_goals)
+
+# Add totals for rows and columns
+poisson_df <- poisson_df %>%
+  mutate(Total = rowSums(poisson_df)) %>%
+  bind_rows(cbind(as.data.frame(t(colSums(poisson_df[, 1:(max_goals + 1)]))), Total = sum(poisson_matrix))) %>%
+  mutate_all(~ round(., 3))  # Round values to 3 decimal places for clean CSV output
+
+# Fix column names for readability
+rownames(poisson_df)[nrow(poisson_df)] <- "Column_Total"
+
+# Save Poisson distribution matrix to CSV
+output_file <- "/Users/marvinkingjr./Desktop/RStudioWork/Sports/HS_Sports/7A_Varsity_Girls/Poisson_Matrix_Oxford_Southaven.csv"
+write.csv(poisson_df, output_file, row.names = TRUE)
+cat("Poisson matrix saved to:", output_file, "\n")
+
+# Calculate win probabilities
+home_win_prob <- sum(poisson_matrix[lower.tri(poisson_matrix)])  # Home Wins (lower triangle)
+away_win_prob <- sum(poisson_matrix[upper.tri(poisson_matrix)])  # Away Wins (upper triangle)
+tie_prob <- sum(diag(poisson_matrix))                           # Ties (diagonal)
+
+# Normalize probabilities to ensure they sum to 1
+total_prob <- home_win_prob + away_win_prob + tie_prob
+home_win_prob <- round(home_win_prob / total_prob, 3)
+away_win_prob <- round(away_win_prob / total_prob, 3)
+tie_prob <- round(tie_prob / total_prob, 3)
+
+# Output probabilities
+cat("Win Probabilities:\n")
+cat(home_team, "Win Probability:", home_win_prob * 100, "%\n")
+cat(away_team, "Win Probability:", away_win_prob * 100, "%\n")
+cat("Tie Probability:", tie_prob * 100, "%\n")
+
+
+
+
+```
+
+

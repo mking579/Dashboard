@@ -1,0 +1,24 @@
+```{r}
+odp <- read_csv("/Users/marvinkingjr./Desktop/Soccer Data/ODP Interregionals.csv")
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(readxl)
+```
+
+```{r}
+sapply(odp, class)
+# checking to see if numeric
+```
+```{r}
+region2 <- odp %>%
+  filter(Region == 2)
+```
+
+```{r}
+odp$Region
+```
+
+

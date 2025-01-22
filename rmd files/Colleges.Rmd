@@ -1,0 +1,186 @@
+```{r}
+library(tidyverse)
+library(SwimmeR)
+library(rvest)
+library(purrr)
+library(writexl)
+library(readxl)
+library(tigris)
+library(sf)
+library(cartogram)
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(statebins)
+library(gganimate)
+
+```
+
+```{r}
+College_Apps <- read_xlsx("/Users/marvinkingjr./Desktop/RStudioWork/College Apps.xlsx")
+```
+
+
+```{r}
+
+College_Apps
+```
+
+```{r}
+College_Apps <- College_Apps %>%
+  arrange(`Net Cost * 4 Years`) %>% # Arrange rows by Net Cost * 4 Years in ascending order
+  mutate(`Net Cost of Attendance Rank` = row_number(`Net Cost * 4 Years`)) # Assign ranks
+```
+
+```{r}
+College_Apps
+```
+
+```{r}
+College_Apps <- College_Apps %>%
+  arrange(desc(`Acceptance Rate`)) %>% # Arrange rows by Acceptance Rate in descending order
+  mutate(`Acceptance Rate Rank` = row_number(`Acceptance Rate`)) # Assign ranks
+```
+
+```{r}
+College_Apps
+```
+
+```{r}
+College_Apps <- College_Apps %>%
+  arrange(desc(`ACT Range`)) %>% # Arrange rows by ACT Range in descending order
+  mutate(`ACT Rank` = row_number(`ACT Range`)) # Assign ranks
+```
+
+```{r}
+College_Apps
+```
+
+```{r}
+# Ensure NA values do not interfere with ranking
+College_Apps <- College_Apps %>%
+  arrange(desc(`Median Earnings 6-years after Graduation`)) %>% # Sort by descending Median Earnings
+  mutate(`Earnings Rank` = dense_rank(desc(`Median Earnings 6-years after Graduation`))) # Assign ranks with dense_rank
+
+```
+
+```{r}
+College_Apps
+```
+```{r}
+# Ensure NA values do not interfere with ranking
+College_Apps <- College_Apps %>%
+  arrange(desc(`ACT Range`)) %>% # Sort by descending ACT Range
+  mutate(`ACT Rank` = dense_rank(desc(`ACT Range`))) # Assign ranks with dense_rank
+
+```
+
+```{r}
+College_Apps
+```
+```{r}
+# Create Total Score as the sum of all columns ending with "Rank"
+College_Apps <- College_Apps %>%
+  mutate(`Total Score` = rowSums(select(., ends_with("Rank")), na.rm = TRUE))
+
+```
+
+```{r}
+College_Apps
+```
+```{r}
+# Create the Overall Weighted Rank column
+College_Apps <- College_Apps %>%
+  mutate(`Overall Weighted Rank` = 
+           (`Net Cost of Attendance Rank` * 0.5) +
+           (`Acceptance Rate Rank` * 0.125) +
+           (`ACT Rank` * 0.125) +
+           (`Earnings Rank` * 0.25))
+
+```
+
+
+```{r}
+College_Apps
+```
+```{r}
+ggplot(College_Apps, aes(x = `Overall Weighted Rank`, y = `Net Cost of Attendance Rank`)) +
+  geom_point(alpha = 0.7) + # Add scatterplot points with transparency
+  geom_smooth(method = "lm", color = "red", se = FALSE) + # Add a smoothed regression line
+  scale_x_continuous(limits = c(0, 75)) + # Scale x-axis from 0 to 75
+  scale_y_continuous(limits = c(0, 75)) + # Scale y-axis from 0 to 75
+  labs(
+    title = "Relationship between Net Cost of Attendance and Overall Rank",
+    x = "Overall Weighted Rank (scaled 0-75)",
+    y = "Net Cost of Attendance Rank (scaled 0-75)"
+  ) +
+  theme_minimal() # Apply a clean theme
+
+```
+
+```{r}
+
+# Convert ACT Range to numeric by averaging the range
+College_Apps$`ACT Range` <- sapply(
+  strsplit(College_Apps$`ACT Range`, "-"), # Split by hyphen
+  function(x) mean(as.numeric(x)) # Convert to numeric and calculate mean
+)
+
+# Check the converted values
+head(College_Apps$`ACT Range`)
+
+
+```
+
+
+
+```{r}
+College_Apps
+```
+```{r}
+# Check the structure
+str(College_Apps$`ACT Range`)
+
+# View unique values
+unique(College_Apps$`ACT Range`)
+
+```
+
+```{r}
+# Ensure ACT Range is character and remove any spaces or unexpected characters
+College_Apps$`ACT Range` <- as.character(College_Apps$`ACT Range`)
+College_Apps$`ACT Range` <- gsub(" ", "", College_Apps$`ACT Range`) # Remove spaces
+
+```
+
+```{r}
+# Split the range, convert to numeric, and calculate the mean
+College_Apps$`ACT Range` <- sapply(
+  strsplit(College_Apps$`ACT Range`, "-"), 
+  function(x) {
+    if (length(x) == 2) {
+      mean(as.numeric(x))
+    } else {
+      NA # Assign NA for invalid entries
+    }
+  }
+)
+
+```
+
+```{r}
+College_Apps
+```
+```{r}
+# Perform multiple regression
+regression_model <- lm(
+  `Median Earnings 6-years after Graduation` ~ 
+    `Acceptance Rate` + `ACT Rank` + `Net Cost of Attendance`,
+  data = College_Apps
+)
+
+# Display the regression summary
+summary(regression_model)
+
+```
+

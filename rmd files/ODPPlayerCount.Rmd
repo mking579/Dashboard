@@ -1,0 +1,191 @@
+```{r}
+install.packages("tigris")
+install.packages("sf")
+install.packages("cartogram")
+```
+
+```{r}
+library(tigris)
+library(sf)
+library(cartogram)
+library(ggplot2)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(statebins)
+```
+
+```{r}
+ODPStateMap <- read.csv("/Users/marvinkingjr./Desktop/RStudioWork/Soccer/Spreadsheets/ODPStates.csv")
+```
+
+```{r}
+ODPStateMap
+```
+
+```{r}
+ODPStateMap <- data_frame(
+  State = c(
+    "AL", "AK", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", 
+    "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+    "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+    "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+    "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  
+  PlayerCount = c(
+9, 1, 0, 13, 70, 17, 16, 0, 5, 58, 62, 36, 13, 46, 19, 19, 11, 5, 14, 9, 48, 21, 52, 17, 5, 36, 8, 7, 15, 18, 28, 8, 52, 38, 2, 36, 7, 20, 33, 7, 11, 4, 32, 49, 30, 8, 40, 45, 2, 33, 10)
+)
+
+statebins_map <- statebins(
+  ODPStateMap,
+  state_col = "State",
+  value_col = "PlayerCount",
+  name = "Player Count",
+  palette = "Greens", # You can change the palette to other options like "Greens", "Reds", etc.
+  direction = 1      # Positive values for ascending colors
+)
+
+statebins_map +
+  ggtitle("Player Count by State") +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),    # Removes grid lines
+    axis.text = element_blank(),     # Removes axis numbers
+    axis.ticks = element_blank()     # Removes axis ticks
+  )
+
+ggsave() <- "/Users/marvinkingjr./Desktop/RStudioWork/Visualizations/ODPPlayerCountbyState.png" 
+```
+
+```{r}
+states <- states(cb = TRUE, resolution = "20m")
+```
+
+```{r}
+states <- st_as_sf(states)
+states <- states[states$STUSPS %in% ODPStateMap$State, ]
+states_data <- merge(states, ODPStateMap, by.x = "STUSPS", by.y = "State")
+states_data <- st_transform(states_data, crs = 5070)
+```
+
+```{r}
+states_cartogram <- cartogram_cont(states_data, "PlayerCount", itermax = 5)
+```
+
+```{r}
+
+ggplot() +
+  geom_sf(data = states_cartogram, aes(fill = PlayerCount), color = NA) +
+  scale_fill_viridis_c(name = "Player Count", option = "plasma") +
+  ggtitle("Cartogram of Player Count by State") +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  )
+```
+
+```{r}
+total_player_count <- sum(ODPStateMap$PlayerCount)
+
+ODPStateMap <- ODPStateMap %>%
+  mutate(Percentage = round((PlayerCount / total_player_count) * 100, 0)) %>%
+
+arrange(desc(Percentage))
+
+print(ODPStateMap)
+
+```
+
+```{r}
+install.packages("ggimage") 
+```
+
+```{r}
+library(ggimage)
+```
+
+```{r}
+states_data <- data.frame(
+  State = c("California", "Georgia", "Florida", "New York", "Michigan", "Texas", "Maryland", "Illinois", "Washington", "Virginia", "North Carolina", "Ohio", "Missouri", "Hawaii", "Pennsylvania", "Wisconsin", "Tennessee", "Utah", "New Jerey", "Massachusetts", "Oregon", "Indiana", "Iowa", "New Hampshire", "Minnesota", "Colorado", "Connecticut", "Nevada", "Louisiana", "Arizona", "Idaho", "South Carolina", "Kansas", "Wyoming", "Maine", "Alabama", "Vermont", "Montana", "New Mexico", "Rhode Island", "Oklahoma", "Nebraska"), 
+  Percentage = c(6, 5, 5, 5, 5, 4, 4, 4, 4, 
+                 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 
+                 2, 2, 2, 2, 2, 1, 1, 1, 1, 
+                 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 
+)
+
+
+ODPStateMap <- data.frame(State = State, PlayerCount = player_count)
+```
+
+```{r}
+# Updated states_data
+states_data <- data.frame(
+  State = c("California", "Georgia", "Florida", "New York", "Michigan", "Texas", "Maryland", "Illinois", "Washington", "Virginia", "North Carolina", "Ohio", "Missouri", "Hawaii", "Pennsylvania", "Wisconsin", "Tennessee", "Utah", "New Jerey", "Massachusetts", "Oregon", "Indiana", "Iowa", "New Hampshire", "Minnesota", "Colorado", "Connecticut", "Nevada", "Louisiana", "Arizona", "Idaho", "South Carolina", "Kansas", "Wyoming", "Maine", "Alabama", "Vermont", "Montana", "New Mexico", "Rhode Island", "Oklahoma", "Nebraska"), 
+  Percentage = c(6, 5, 5, 5, 5, 4, 4, 4, 4, 
+                 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 
+                 2, 2, 2, 2, 2, 1, 1, 1, 1, 
+                 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 
+)
+
+# Total players
+total_player_count <- 97
+
+# Add PlayerCount column by scaling percentages
+ODPStateMap <- states_data %>%
+  mutate(PlayerCount = round(Percentage * total_player_count / 100))
+
+# Check for rows with PlayerCount > 0
+ODPStateMap <- ODPStateMap %>%
+  filter(PlayerCount > 0) %>%
+  arrange(desc(PlayerCount))  # Optional: Sort from largest to smallest
+
+# Print the final dataframe
+print(ODPStateMap)
+
+```
+```{r}
+install.packages("RColorBrewer")
+```
+```{r}
+library(RColorBrewer)
+
+```
+
+```{r}
+
+library(ggplot2)
+library(ggimage)
+library(RColorBrewer)
+
+# Generate grid positions (97 total players)
+total_players <- sum(ODPStateMap$PlayerCount)
+grid <- data.frame(
+  x = rep(1:10, length.out = total_players),  # Adjust for 10 columns
+  y = rep(1:ceiling(total_players / 10), each = 10)[1:total_players],  # Rows based on total players
+  State = rep(ODPStateMap$State, ODPStateMap$PlayerCount)  # Repeat states by PlayerCount
+)
+
+# Provide a valid image path or URL
+person_image <- "/Users/marvinkingjr./Desktop/RStudioWork/Soccer/Visualizations/images.png"  # Update with your local file path or valid URL
+
+# Add image path column
+grid$image <- person_image
+
+# Create a custom color palette using 'Spectral'
+custom_palette <- colorRampPalette(brewer.pal(9, "Spectral"))(length(unique(grid$State)))
+
+# Plot the Isotype chart
+ggplot(grid, aes(x = x, y = y, image = image)) +
+  geom_image(aes(fill = State), size = 0.1) +  # Adjust size as needed
+  scale_fill_manual(values = custom_palette) +  # Assign custom colors
+  theme_void() +  # Remove grid and axes
+  labs(title = "Isotype Chart: Player Distribution by State", fill = "State") +
+  theme(legend.position = "bottom")
+
+
+
+
+```
+
